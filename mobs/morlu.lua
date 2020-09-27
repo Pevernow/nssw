@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morlu", "Morlu", {
+nssw:register_mob("nssw:morlu", "Morlu", {
     type = "monster",
     hp_max = 36,
     hp_min = 26,
@@ -21,11 +21,11 @@ nssm:register_mob("nssm:morlu", "Morlu", {
         random = "morlu2"
     },
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 3,
         max = 4,},
-        {name = "nssm:lustful_soul_fragment",
+        {name = "nssw:lustful_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},
@@ -134,7 +134,7 @@ nssm:register_mob("nssm:morlu", "Morlu", {
                                 nname = "greedy_soul_fragment.png"
                             elseif mod_name == "3d_armor" then
                                 nname = "3d_armor_inv_"..nname..".png"
-                            elseif mod_name == "nssm" then
+                            elseif mod_name == "nssw" then
                                 nname = "inv_"..nname..".png"
                             else
                                 nname = "3d_armor_inv_chestplate_diamond.png"

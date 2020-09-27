@@ -49,7 +49,7 @@ local function set_player_boost(user, duration, power)
     minetest.chat_send_player(user:get_player_name(), "You have "..(math.floor(remaining*10)/10).."s of boost")
 
     local userpos = user:get_pos()
-    minetest.sound_play("nssm_energy_powerup", {
+    minetest.sound_play("nssw_energy_powerup", {
         pos = userpos,
         max_hear_distance = 20,
         gain = 0.5,
@@ -84,13 +84,13 @@ local function eat_energy(itemstack, user, pointedthing)
         pointednode = minetest.get_node(pointedthing.under)
     end
 
-    if pointednode and pointednode.name == "nssb:dis_morvalar_block" and itemstack:get_name() == "nssm:superior_energy_globe" then
+    if pointednode and pointednode.name == "nssb:dis_morvalar_block" and itemstack:get_name() == "nssw:superior_energy_globe" then
         minetest.set_node(pointedthing.under, {name="nssb:morvalar_block"})
         return
     end
     --
 
-    if not nssm.energy_boosts then
+    if not nssw.energy_boosts then
         return
     end
 
@@ -112,7 +112,7 @@ end
 -- Define energies
 
 local function register_energy_light(name, descr, ns, div, nici)
-    minetest.register_node("nssm:"..name, {
+    minetest.register_node("nssw:"..name, {
         description = descr,
         tiles = {
             {
@@ -150,13 +150,13 @@ local function register_energy_light(name, descr, ns, div, nici)
 end
 
 local function register_energy(name, descr, nodesize, nutrition, duration)
-    life_energy_ratings["nssm:"..name] = {nutrition = nutrition, duration = duration}
+    life_energy_ratings["nssw:"..name] = {nutrition = nutrition, duration = duration}
     local div = 64
 
-    if nssm.energy_lights then
+    if nssw.energy_lights then
         register_energy_light(name, descr, nodesize, div)
     else
-        minetest.register_craftitem("nssm:"..name, {
+        minetest.register_craftitem("nssw:"..name, {
             description = descr,
             image = name..".png",
             on_use = eat_energy,
@@ -190,6 +190,6 @@ register_energy('superior_energy_globe', 'Awesome Energy Globe', 15, 18, 10)
 -- never obtainable
 register_energy_light('light_energy', 'Light Energy', 12, 64, 1)
 
-register_energy_craft("nssm:life_energy", "nssm:energy_globe")
-register_energy_craft("nssm:energy_globe", "nssm:great_energy_globe")
-register_energy_craft("nssm:great_energy_globe", "nssm:superior_energy_globe")
+register_energy_craft("nssw:life_energy", "nssw:energy_globe")
+register_energy_craft("nssw:energy_globe", "nssw:great_energy_globe")
+register_energy_craft("nssw:great_energy_globe", "nssw:superior_energy_globe")

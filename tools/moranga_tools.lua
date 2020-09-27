@@ -4,80 +4,80 @@
 if minetest.get_modpath("nssb") then
 
     minetest.register_craft({
-        output = 'nssm:axe_of_pride',
+        output = 'nssw:axe_of_pride',
         recipe = {
-            {'nssm:proud_moranga', 'nssm:proud_moranga', 'nssm:proud_moranga'},
-            {'nssm:proud_moranga', 'nssb:moranga_ingot', ''},
+            {'nssw:proud_moranga', 'nssw:proud_moranga', 'nssw:proud_moranga'},
+            {'nssw:proud_moranga', 'nssb:moranga_ingot', ''},
             {'', 'nssb:moranga_ingot', ''},
         }
     })
 
     -- FIXME change gratuitousness to wrath
     minetest.register_craft({
-        output = 'nssm:gratuitousness_battleaxe',
+        output = 'nssw:gratuitousness_battleaxe',
         recipe = {
-            {'nssm:greedy_moranga', 'nssm:greedy_moranga', 'nssm:greedy_moranga'},
-            {'nssm:greedy_moranga', 'nssb:moranga_ingot', 'nssm:greedy_moranga'},
+            {'nssw:greedy_moranga', 'nssw:greedy_moranga', 'nssw:greedy_moranga'},
+            {'nssw:greedy_moranga', 'nssb:moranga_ingot', 'nssw:greedy_moranga'},
             {'', 'nssb:moranga_ingot', ''},
         }
     })
 
     minetest.register_craft({
-        output = 'nssm:sword_of_envy',
+        output = 'nssw:sword_of_envy',
         recipe = {
-            {'nssm:envious_moranga'},
-            {'nssm:envious_moranga'},
+            {'nssw:envious_moranga'},
+            {'nssw:envious_moranga'},
             {'nssb:moranga_ingot'},
         }
     })
 
     -- FIXME should be greed?
     minetest.register_craft({
-        output = 'nssm:sword_of_eagerness',
+        output = 'nssw:sword_of_eagerness',
         recipe = {
-            {'nssm:slothful_moranga'},
-            {'nssm:slothful_moranga'},
+            {'nssw:slothful_moranga'},
+            {'nssw:slothful_moranga'},
             {'nssb:moranga_ingot'},
         }
     })
 
     -- FIXME should be laziness
     minetest.register_craft({
-        output = 'nssm:falchion_of_eagerness',
+        output = 'nssw:falchion_of_eagerness',
         recipe = {
-            {'nssm:slothful_moranga','nssm:slothful_moranga'},
-            {'nssm:slothful_moranga', ''},
+            {'nssw:slothful_moranga','nssw:slothful_moranga'},
+            {'nssw:slothful_moranga', ''},
             {'nssb:moranga_ingot',''},
         }
     })
 
     minetest.register_craft({
-        output = 'nssm:sword_of_gluttony',
+        output = 'nssw:sword_of_gluttony',
         recipe = {
-            {'nssm:gluttonous_moranga', 'nssm:gluttonous_moranga', 'nssm:gluttonous_moranga'},
-            {'', 'nssm:gluttonous_moranga', ''},
+            {'nssw:gluttonous_moranga', 'nssw:gluttonous_moranga', 'nssw:gluttonous_moranga'},
+            {'', 'nssw:gluttonous_moranga', ''},
             {'', 'nssb:moranga_ingot', ''},
         }
     })
 
-    function nssm_register_moranga (vice)
+    function nssw_register_moranga (vice)
         minetest.register_craft({
-            output = 'nssm:'.. vice ..'_moranga',
+            output = 'nssw:'.. vice ..'_moranga',
             recipe = {
-                {'nssm:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot', 'nssm:'.. vice ..'_soul_fragment'},
-                {'nssb:moranga_ingot', 'nssm:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot'},
-                {'nssm:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot', 'nssm:'.. vice ..'_soul_fragment'},
+                {'nssw:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot', 'nssw:'.. vice ..'_soul_fragment'},
+                {'nssb:moranga_ingot', 'nssw:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot'},
+                {'nssw:'.. vice ..'_soul_fragment', 'nssb:moranga_ingot', 'nssw:'.. vice ..'_soul_fragment'},
             }
         })
     end
 
-    nssm_register_moranga ("lustful")
-    nssm_register_moranga ("greedy")
-    nssm_register_moranga ("slothful")
-    nssm_register_moranga ("wrathful")
-    nssm_register_moranga ("gluttonous")
-    nssm_register_moranga ("envious")
-    nssm_register_moranga ("proud")
+    nssw_register_moranga ("lustful")
+    nssw_register_moranga ("greedy")
+    nssw_register_moranga ("slothful")
+    nssw_register_moranga ("wrathful")
+    nssw_register_moranga ("gluttonous")
+    nssw_register_moranga ("envious")
+    nssw_register_moranga ("proud")
 end
 
 -- Tools with special drop routines
@@ -145,7 +145,7 @@ local function eat_dropfuel(player, dropfuel_def)
     return false
 end
 
-minetest.register_tool("nssm:axe_of_pride", {
+minetest.register_tool("nssw:axe_of_pride", {
     -- Damage enemy, heal user by the same amount
     description = "Axe of Pride",
     inventory_image = "axe_of_pride.png",
@@ -161,7 +161,7 @@ minetest.register_tool("nssm:axe_of_pride", {
     },
     on_drop = function(itemstack, dropper, pos)
         local objects = minetest.env:get_objects_inside_radius(pos, 10)
-        local dropfuel = {name="nssm:energy_globe", description="energy sphere", quantity=1}
+        local dropfuel = {name="nssw:energy_globe", description="energy sphere", quantity=1}
         local part = 0
 
         for _,obj in ipairs(objects) do
@@ -224,7 +224,7 @@ minetest.register_tool("nssm:axe_of_pride", {
     end,
 })
 
-minetest.register_tool("nssm:gratuitousness_battleaxe", {
+minetest.register_tool("nssw:gratuitousness_battleaxe", {
     -- aka Battleaxe of Boom - causes and explosion at <epicenter_distance> nodes from player
     description = "Gratuitousness Battleaxe",
     inventory_image = "gratuitousness_battleaxe.png",
@@ -245,7 +245,7 @@ minetest.register_tool("nssm:gratuitousness_battleaxe", {
         local vec = dropper:get_look_dir()
         local pos = dropper:getpos()
         --vec.y = 0
-        local dropfuel = {name = "nssm:energy_globe", description = "energy globe", quantity = 1}
+        local dropfuel = {name = "nssw:energy_globe", description = "energy globe", quantity = 1}
 
         for i=1,epicenter_distance do
             pos = vector.add(pos, vec)
@@ -263,7 +263,7 @@ minetest.register_tool("nssm:gratuitousness_battleaxe", {
     end,
 })
 
-minetest.register_tool("nssm:sword_of_eagerness", {
+minetest.register_tool("nssw:sword_of_eagerness", {
     -- Cause enemies to be sent upwards y+20
     description = "Sword of Eagerness",
     inventory_image = "sword_of_eagerness.png",
@@ -280,7 +280,7 @@ minetest.register_tool("nssm:sword_of_eagerness", {
     on_drop = function(itemstack, dropper, pos)
         local objects = minetest.env:get_objects_inside_radius(pos, 10)
         local flag = 0
-        local dropfuel = {name = "nssm:energy_globe", description = "energy globe", quantity = 1}
+        local dropfuel = {name = "nssw:energy_globe", description = "energy globe", quantity = 1}
 
         for _,obj in ipairs(objects) do
             local part = 0
@@ -337,7 +337,7 @@ minetest.register_tool("nssm:sword_of_eagerness", {
     end,
 })
 
-minetest.register_tool("nssm:falchion_of_eagerness", {
+minetest.register_tool("nssw:falchion_of_eagerness", {
     -- Sends player 16m in the direction in which they are pointing...
     description = "Falchion of Eagerness",
     inventory_image = "falchion_of_eagerness.png",
@@ -355,7 +355,7 @@ minetest.register_tool("nssm:falchion_of_eagerness", {
         local vec = dropper:get_look_dir()
         local pos_destination = dropper:getpos()
         --vec.y = 0
-        local dropfuel = {name = "nssm:life_energy", description = "life energy", quantity = 5}
+        local dropfuel = {name = "nssw:life_energy", description = "life energy", quantity = 5}
 
         for i=1,16 do
             pos_destination = vector.add(pos_destination, vec)
@@ -370,7 +370,7 @@ minetest.register_tool("nssm:falchion_of_eagerness", {
             if find_dropfuel(dropper, dropfuel) then
                 return
 
-            elseif minetest.is_protected(pos_destination, pname) or nssm.unswappable_node(pos_destination) then
+            elseif minetest.is_protected(pos_destination, pname) or nssw.unswappable_node(pos_destination) then
                 minetest.chat_send_player(pname, "You cannot go to that protected space!")
                 return
 
@@ -396,7 +396,7 @@ minetest.register_tool("nssm:falchion_of_eagerness", {
                 local dy, digpos
                 for dy = -1,1 do
                     digpos = pos_destination + dy
-                    if not nssm.unswappable_node(digpos) then
+                    if not nssw.unswappable_node(digpos) then
                         minetest.remove_node(digpos)
                     end
                 end
@@ -428,7 +428,7 @@ minetest.register_tool("nssm:falchion_of_eagerness", {
     end,
 })
 
-minetest.register_tool("nssm:sword_of_envy", {
+minetest.register_tool("nssw:sword_of_envy", {
     -- Switch the health of the enemy with the health of the player
     -- Particularly useful when enemy's health is way over 20 -- this is pretty much a cheat item when facing a boss...
     description = "Sword of Envy",
@@ -446,7 +446,7 @@ minetest.register_tool("nssm:sword_of_envy", {
     on_drop = function(itemstack, dropper, pos)
         local objects = minetest.env:get_objects_inside_radius(pos, 10)
         local flag = 0
-        local dropfuel = {name = "nssm:energy_globe", description = "energy globe", quantity = 1}
+        local dropfuel = {name = "nssw:energy_globe", description = "energy globe", quantity = 1}
 
         for _,obj in ipairs(objects) do
             if flag == 0 then
@@ -495,7 +495,7 @@ minetest.register_tool("nssm:sword_of_envy", {
     end,
 })
 
-minetest.register_tool("nssm:sword_of_gluttony", {
+minetest.register_tool("nssw:sword_of_gluttony", {
     -- Kills nearby monsters and causes them to drop roasted duck legs! :D
     description = "Sword of Gluttony",
     inventory_image = "sword_of_gluttony.png",
@@ -512,7 +512,7 @@ minetest.register_tool("nssm:sword_of_gluttony", {
     on_drop = function(itemstack, dropper, pos)
         local objects = minetest.env:get_objects_inside_radius(pos, 10)
         local flag = 0
-        local dropfuel = {name = "nssm:energy_globe", description = "energy globe", quantity = 1}
+        local dropfuel = {name = "nssw:energy_globe", description = "energy globe", quantity = 1}
 
         for _,obj in ipairs(objects) do
             if flag == 0 then
@@ -546,8 +546,8 @@ minetest.register_tool("nssm:sword_of_gluttony", {
                                     eat_dropfuel(dropper, dropfuel)
 
                                     for i = 1,math.random(1,4) do
-                                        drop = minetest.add_item(pos, "nssm:roasted_duck_legs 1")
-                                        nssm.drops(drop)
+                                        drop = minetest.add_item(pos, "nssw:roasted_duck_legs 1")
+                                        nssw.drops(drop)
                                     end
 
                                     local s = obj:getpos()
@@ -580,7 +580,7 @@ minetest.register_tool("nssm:sword_of_gluttony", {
     end,
 })
 
-minetest.register_tool("nssm:death_scythe", {
+minetest.register_tool("nssw:death_scythe", {
     -- Kills everything around it, consumes user's life
     -- Casues dry grass, dry shrubs, and dead leaves, dropping lots of life eergy to drop too
     description = "Death Scythe",
@@ -620,7 +620,7 @@ minetest.register_tool("nssm:death_scythe", {
             end
             if flag == 1 then
                 for i = 1,math.random(1,2) do
-                    drop = minetest.add_item(pos, "nssm:energy_globe 1")
+                    drop = minetest.add_item(pos, "nssw:energy_globe 1")
 
                     if drop then
                         drop:setvelocity({
@@ -640,8 +640,8 @@ minetest.register_tool("nssm:death_scythe", {
             minetest.set_node(v, {name="default:dirt_with_dry_grass"})
             if math.random(1,3)==1 then
                 v.y = v.y +2
-                drop = minetest.add_item(v, "nssm:life_energy 1")
-                nssm.drops(drop)
+                drop = minetest.add_item(v, "nssw:life_energy 1")
+                nssw.drops(drop)
             end
         end
 
@@ -651,19 +651,19 @@ minetest.register_tool("nssm:death_scythe", {
             minetest.set_node(v, {name="default:dry_shrub"})
             if math.random(1,3)==1 then
                 v.y = v.y +2
-                drop = minetest.add_item(v, "nssm:life_energy 1")
-                nssm.drops(drop)
+                drop = minetest.add_item(v, "nssw:life_energy 1")
+                nssw.drops(drop)
             end
         end
 
         local poslist = minetest.find_nodes_in_area(vector.subtract(pos, vec), vector.add(pos,vec), "group:leaves")
         for _,v in pairs(poslist) do
             --minetest.chat_send_all(minetest.pos_to_string(v))
-            minetest.set_node(v, {name="nssm:dead_leaves"})
+            minetest.set_node(v, {name="nssw:dead_leaves"})
             if math.random(1,3)==1 then
                 v.y = v.y +2
-                drop = minetest.add_item(v, "nssm:life_energy 1")
-                nssm.drops(drop)
+                drop = minetest.add_item(v, "nssw:life_energy 1")
+                nssw.drops(drop)
             end
         end
     end,

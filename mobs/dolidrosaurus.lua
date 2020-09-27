@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:dolidrosaurus", "Dolidrosaurus", {
+nssw:register_mob("nssw:dolidrosaurus", "Dolidrosaurus", {
     type = "monster",
     hp_max = 46,
     hp_min = 23,
@@ -23,11 +23,11 @@ nssm:register_mob("nssm:dolidrosaurus", "Dolidrosaurus", {
         random = "crocod",
     },
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 3,},
-        {name = "nssm:dolidrosaurus_fin",
+        {name = "nssw:dolidrosaurus_fin",
         chance = 2,
         min = 1,
         max = 3,},
@@ -40,7 +40,7 @@ nssm:register_mob("nssm:dolidrosaurus", "Dolidrosaurus", {
     group_attack=true,
     attack_animals=true,
     knock_back=3,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     on_rightclick = nil,
     attack_type = "dogfight",
     animation = {

@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:scrausics", "Scrausics", {
+nssw:register_mob("nssw:scrausics", "Scrausics", {
     type = "monster",
     hp_max = 33,
     hp_min = 22,
@@ -21,11 +21,11 @@ nssm:register_mob("nssm:scrausics", "Scrausics", {
     damage = 4,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 3,
         max = 4,},
-        {name = "nssm:raw_scrausics_wing",
+        {name = "nssw:raw_scrausics_wing",
         chance = 1,
         min = 1,
         max = 2,},
@@ -37,7 +37,7 @@ nssm:register_mob("nssm:scrausics", "Scrausics", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     on_rightclick = nil,
     fly = true,
     attack_type = "dogfight",

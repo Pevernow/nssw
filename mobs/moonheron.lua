@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:moonheron", "Moon Heron", {
+nssw:register_mob("nssw:moonheron", "Moon Heron", {
     type = "monster",
     hp_max = 33,
     hp_min = 22,
@@ -20,11 +20,11 @@ nssm:register_mob("nssm:moonheron", "Moon Heron", {
     damage = 5,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:heron_leg",
+        {name = "nssw:heron_leg",
         chance = 1,
         min = 1,
         max = 1,},
@@ -36,7 +36,7 @@ nssm:register_mob("nssm:moonheron", "Moon Heron", {
     group_attack=true,
     attack_animals=true,
     knock_back=4,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     on_rightclick = nil,
       fly = true,
     attack_type = "dogfight",

@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morvy", "Morvy", {
+nssw:register_mob("nssw:morvy", "Morvy", {
     type = "monster",
     hp_max = 39,
     hp_min = 21,
@@ -19,11 +19,11 @@ nssm:register_mob("nssm:morvy", "Morvy", {
     },
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 5,
         max = 7,},
-        {name = "nssm:envious_soul_fragment",
+        {name = "nssw:envious_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},
@@ -79,7 +79,7 @@ nssm:register_mob("nssm:morvy", "Morvy", {
 
                 local objects = minetest.env:get_objects_inside_radius(s, 10)
                 for _,obj in ipairs(objects) do
-                    if (obj:get_luaentity() and ((obj:get_luaentity().name == "nssm:morbat1") or (obj:get_luaentity().name == "nssm:morbat2") or (obj:get_luaentity().name == "nssm:morbat3"))) then
+                    if (obj:get_luaentity() and ((obj:get_luaentity().name == "nssw:morbat1") or (obj:get_luaentity().name == "nssw:morbat2") or (obj:get_luaentity().name == "nssw:morbat3"))) then
                         counter = counter + 1
                     end
                 end
@@ -90,13 +90,13 @@ nssm:register_mob("nssm:morvy", "Morvy", {
                     local bat
                     local which = math.random(1,3)
                     if which == 1 then
-                        bat = "nssm:morbat1"
+                        bat = "nssw:morbat1"
                     elseif which == 2 then
-                        bat = "nssm:morbat2"
+                        bat = "nssw:morbat2"
                     elseif which == 3 then
-                        bat = "nssm:morbat3"
+                        bat = "nssw:morbat3"
                     end
-                    if (bat=="nssm:morbat3") then
+                    if (bat=="nssw:morbat3") then
                         pos1.y=pos1.y+1.5
                     end
                     minetest.add_entity(pos1, bat)
@@ -125,7 +125,7 @@ nssm:register_mob("nssm:morvy", "Morvy", {
 
 --Morbats
 
-nssm:register_mob("nssm:morbat1", "Morbat I", {
+nssw:register_mob("nssw:morbat1", "Morbat I", {
     type = "monster",
     hp_max = 15,
     hp_min = 13,
@@ -147,7 +147,7 @@ nssm:register_mob("nssm:morbat1", "Morbat I", {
     jump = true,
     rotate = 270,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
@@ -175,7 +175,7 @@ nssm:register_mob("nssm:morbat1", "Morbat I", {
     }
 })
 
-nssm:register_mob("nssm:morbat2", "Morbat II", {
+nssw:register_mob("nssw:morbat2", "Morbat II", {
     type = "monster",
     hp_max = 13,
     hp_min = 5,
@@ -197,7 +197,7 @@ nssm:register_mob("nssm:morbat2", "Morbat II", {
     jump = true,
     rotate = 270,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
@@ -227,7 +227,7 @@ nssm:register_mob("nssm:morbat2", "Morbat II", {
 })
 
 
-nssm:register_mob("nssm:morbat3", "Morbat III", {
+nssw:register_mob("nssw:morbat3", "Morbat III", {
     type = "monster",
     hp_max = 13,
     hp_min = 12,
@@ -249,7 +249,7 @@ nssm:register_mob("nssm:morbat3", "Morbat III", {
     jump = true,
     rotate = 270,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
@@ -263,7 +263,7 @@ nssm:register_mob("nssm:morbat3", "Morbat III", {
     on_rightclick = nil,
       fly = true,
     attack_type = "shoot",
-    arrow = "nssm:morarrow",
+    arrow = "nssw:morarrow",
     shoot_interval = 3,
     animation = {
         speed_normal = 25,

@@ -21,47 +21,47 @@ if minetest.get_modpath("3d_armor") then
     }
 
     local materials = {
-        wolf="nssm:wolf_fur",
-        whitewolf="nssm:white_wolf_fur",
-        bloco="nssm:bloco_skin",
-        croco="nssm:crocodile_skin",
-        ant="nssm:ant_hard_skin",
-        ice="nssm:little_ice_tooth",
-        felucco="nssm:felucco_fur",
-        manticore="nssm:manticore_fur",
-        duck="nssm:duck_feather",
-        black_duck="nssm:black_duck_feather",
-        mor= "nssm:lustful_moranga",
-        sandbloco= "nssm:sand_bloco_skin",
-        sandworm="nssm:sandworm_skin",
-        sky="nssm:sky_iron",
-        web="nssm:web_string",
-        denseweb="nssm:dense_web_string",
+        wolf="nssw:wolf_fur",
+        whitewolf="nssw:white_wolf_fur",
+        bloco="nssw:bloco_skin",
+        croco="nssw:crocodile_skin",
+        ant="nssw:ant_hard_skin",
+        ice="nssw:little_ice_tooth",
+        felucco="nssw:felucco_fur",
+        manticore="nssw:manticore_fur",
+        duck="nssw:duck_feather",
+        black_duck="nssw:black_duck_feather",
+        mor= "nssw:lustful_moranga",
+        sandbloco= "nssw:sand_bloco_skin",
+        sandworm="nssw:sandworm_skin",
+        sky="nssw:sky_iron",
+        web="nssw:web_string",
+        denseweb="nssw:dense_web_string",
     }
 
     for k, v in pairs(stats) do
-        minetest.register_tool("nssm:helmet_"..k, {
+        minetest.register_tool("nssw:helmet_"..k, {
             description = v.name.." Helmet",
             inventory_image ="inv_helmet_"..k..".png",
             groups = {armor_head=math.floor(4*v.armor), armor_heal=v.heal, armor_use=v.use},
             wear = 0,
         })
         
-        minetest.register_tool("nssm:chestplate_"..k, {
+        minetest.register_tool("nssw:chestplate_"..k, {
             description = v.name.." Chestplate",
             inventory_image ="inv_chestplate_"..k..".png",
             groups = {armor_torso=math.floor(6*v.armor), armor_heal=v.heal, armor_use=v.use},
             wear = 0,
         })
         
-        minetest.register_tool("nssm:leggings_"..k, {
+        minetest.register_tool("nssw:leggings_"..k, {
             description = v.name.." Leggings",
             inventory_image = "inv_leggings_"..k..".png",
             groups = {armor_legs=math.floor(5*v.armor), armor_heal=v.heal, armor_use=v.use},
             wear = 0,
         })
         
-        minetest.register_tool("nssm:boots_"..k, {
+        minetest.register_tool("nssw:boots_"..k, {
             description = v.name.." Boots",
             inventory_image ="inv_boots_"..k..".png",
             groups = {armor_feet=math.floor(3*v.armor), armor_heal=v.heal, armor_use=v.use},
@@ -71,7 +71,7 @@ if minetest.get_modpath("3d_armor") then
 
     for k, v in pairs(materials) do
         minetest.register_craft({
-            output = "nssm:helmet_"..k,
+            output = "nssw:helmet_"..k,
             recipe = {
                 {v, v, v},
                 {v, "", v},
@@ -80,7 +80,7 @@ if minetest.get_modpath("3d_armor") then
         })
         
         minetest.register_craft({
-            output = "nssm:chestplate_"..k,
+            output = "nssw:chestplate_"..k,
             recipe = {
                 {v, "", v},
                 {v, v, v},
@@ -89,7 +89,7 @@ if minetest.get_modpath("3d_armor") then
         })
         
         minetest.register_craft({
-            output = "nssm:leggings_"..k,
+            output = "nssw:leggings_"..k,
             recipe = {
                 {v, v, v},
                 {v, "", v},
@@ -98,7 +98,7 @@ if minetest.get_modpath("3d_armor") then
         })
         
         minetest.register_craft({
-            output = "nssm:boots_"..k,
+            output = "nssw:boots_"..k,
             recipe = {
                 {v, "", v},
                 {v, "", v},
@@ -117,7 +117,7 @@ if minetest.get_modpath("3d_armor") then
     }
 
     for k, v in pairs(stats) do
-        minetest.register_tool("nssm:helmet_"..k, {
+        minetest.register_tool("nssw:helmet_"..k, {
             description = v.name.." ",
             inventory_image ="inv_helmet_"..k..".png",
             groups = {armor_head=math.floor(5*v.armor), armor_heal=v.heal, armor_use=v.use},
@@ -125,7 +125,7 @@ if minetest.get_modpath("3d_armor") then
         })
     end
 
-    minetest.register_tool("nssm:chestplate_snake", {
+    minetest.register_tool("nssw:chestplate_snake", {
         description = "Snake Scute Chestplate",
         inventory_image ="inv_chestplate_snake.png",
         groups = {armor_torso=40, armor_heal=0, armor_use=100},
@@ -133,28 +133,28 @@ if minetest.get_modpath("3d_armor") then
     })
 
     minetest.register_craft({
-        output = "nssm:chestplate_snake",
+        output = "nssw:chestplate_snake",
         recipe = {
             {"default:steel_ingot", "", "default:steel_ingot"},
-            {"default:steel_ingot", "nssm:snake_scute", "default:steel_ingot"},
+            {"default:steel_ingot", "nssw:snake_scute", "default:steel_ingot"},
             {"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
         },
     })
 
     minetest.register_craft({
-        output = "nssm:helmet_masticone",
+        output = "nssw:helmet_masticone",
         recipe = {
-            {"nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments"},
-            {"nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments"},
-            {"nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments", "nssm:masticone_skull_fragments"},
+            {"nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments"},
+            {"nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments"},
+            {"nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments", "nssw:masticone_skull_fragments"},
         },
     })
 
     minetest.register_craft({
-        output = "nssm:helmet_masticone_crowned",
+        output = "nssw:helmet_masticone_crowned",
         recipe = {
-            {"", "nssm:helmet_crown", ""},
-            {"", "nssm:helmet_masticone", ""},
+            {"", "nssw:helmet_crown", ""},
+            {"", "nssw:helmet_masticone", ""},
             {"", "", ""},
         },
     })
@@ -172,15 +172,15 @@ if minetest.get_modpath("shields") then
     }
 
     local materials = {
-        crab="nssm:crab_carapace_fragment",
-        ice="nssm:little_ice_tooth",
-        mor="nssm:lustful_moranga",
-        masticone="nssm:masticone_skull_fragments",
-        mantis="nssm:mantis_skin",
+        crab="nssw:crab_carapace_fragment",
+        ice="nssw:little_ice_tooth",
+        mor="nssw:lustful_moranga",
+        masticone="nssw:masticone_skull_fragments",
+        mantis="nssw:mantis_skin",
     }
     
     for k, v in pairs(stats) do
-        minetest.register_tool("nssm:shield_"..k, {
+        minetest.register_tool("nssw:shield_"..k, {
             description = v.name.." Shield",
             inventory_image ="inv_shield_"..k..".png",
             groups = {armor_shield=math.floor(5*v.armor), armor_heal=v.heal, armor_use=v.use},
@@ -189,7 +189,7 @@ if minetest.get_modpath("shields") then
 
         local m = materials[k]
         minetest.register_craft({
-            output = "nssm:shield_"..k,
+            output = "nssw:shield_"..k,
             recipe = {
                 {m, m, m},
                 {m, m, m},

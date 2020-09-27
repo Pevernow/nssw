@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:mese_dragon", "Mese Dragon", {
+nssw:register_mob("nssw:mese_dragon", "Mese Dragon", {
     type = "monster",
     hp_max = 666,
     hp_min = 666,
@@ -22,11 +22,11 @@ nssm:register_mob("nssm:mese_dragon", "Mese Dragon", {
     jump = true,
     jump_height = 10,
     drops = {
-        {name = "nssm:rainbow_staff",
+        {name = "nssw:rainbow_staff",
         chance = 1,
         min = 1,
         max = 1},
-        {name = "nssm:energy_globe",
+        {name = "nssw:energy_globe",
         chance = 1,
         min = 99,
         max = 99},
@@ -45,7 +45,7 @@ nssm:register_mob("nssm:mese_dragon", "Mese Dragon", {
     knock_back=0,
     jump_height=12,
     dogshoot_count_max = 9,
-    arrow = "nssm:roar_of_the_dragon",
+    arrow = "nssw:roar_of_the_dragon",
     reach = 5,
     shoot_interval = 3,
     shoot_offset = -1,
@@ -66,7 +66,7 @@ nssm:register_mob("nssm:mese_dragon", "Mese Dragon", {
         dattack_end = 160,
     },
     do_custom = function(self)
-        midas_ability(self, "nssm:dragons_mese", self.run_velocity,2, 3)
+        midas_ability(self, "nssw:dragons_mese", self.run_velocity,2, 3)
     end,
 
     custom_attack = function(self)
@@ -105,7 +105,7 @@ nssm:register_mob("nssm:mese_dragon", "Mese Dragon", {
                         local k = {x = s.x+dx, y=s.y+20, z=s.z+dz}
                         local n = minetest.env:get_node(k).name
                         if n=="air" and math.random(1,23)==1 then
-                            minetest.env:set_node(k, {name="nssm:mese_meteor"})
+                            minetest.env:set_node(k, {name="nssw:mese_meteor"})
                             nodeupdate(k)
                         end
                     end

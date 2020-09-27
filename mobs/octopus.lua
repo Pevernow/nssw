@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:octopus", "Octopus", {
+nssw:register_mob("nssw:octopus", "Octopus", {
     type = "monster",
     hp_max = 32,
     hp_min = 25,
@@ -23,11 +23,11 @@ nssm:register_mob("nssm:octopus", "Octopus", {
         random = "octopus",
     },
     drops = {
-            {name = "nssm:life_energy",
+            {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:tentacle",
+        {name = "nssw:tentacle",
         chance = 1,
         min = 1,
         max = 8,},
@@ -40,7 +40,7 @@ nssm:register_mob("nssm:octopus", "Octopus", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     on_rightclick = nil,
     attack_type = "dogfight",
     animation = {
@@ -57,7 +57,7 @@ nssm:register_mob("nssm:octopus", "Octopus", {
     },
 })
 
-nssm:register_mob("nssm:xgaloctopus", "Mini Octopus", {
+nssw:register_mob("nssw:xgaloctopus", "Mini Octopus", {
     type = "monster",
     hp_max = 30,
     hp_min = 27,
@@ -82,11 +82,11 @@ nssm:register_mob("nssm:xgaloctopus", "Mini Octopus", {
         random = "octopus",
     },
     drops = {
-            {name = "nssm:life_energy",
+            {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:tentacle",
+        {name = "nssw:tentacle",
         chance = 1,
         min = 1,
         max = 8,},
@@ -100,7 +100,7 @@ nssm:register_mob("nssm:xgaloctopus", "Mini Octopus", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     attack_type = "dogfight",
     animation = {
         speed_normal = 25,

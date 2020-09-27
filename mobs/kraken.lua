@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:kraken", "Kraken", {
+nssw:register_mob("nssw:kraken", "Kraken", {
     type = "monster",
     hp_max = 350,
     hp_min = 350,
@@ -24,15 +24,15 @@ nssm:register_mob("nssm:kraken", "Kraken", {
         random = "kraken",
     },
     drops = {
-            {name = "nssm:life_energy",
+            {name = "nssw:life_energy",
         chance = 1,
         min = 6,
         max = 7,},
-        {name = "nssm:tentacle",
+        {name = "nssw:tentacle",
         chance = 1,
         min = 30,
         max = 40,},
-        {name = "nssm:tentacle_curly",
+        {name = "nssw:tentacle_curly",
         chance = 1,
         min = 1,
         max = 1,},
@@ -42,7 +42,7 @@ nssm:register_mob("nssm:kraken", "Kraken", {
     water_damage = 0,
     lava_damage = 10,
     light_damage = 0,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     blood_amount=100,
     knock_back=0,
     on_rightclick = nil,

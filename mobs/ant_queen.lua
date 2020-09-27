@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:ant_queen", "Ant Queen", {
+nssw:register_mob("nssw:ant_queen", "Ant Queen", {
     type = "monster",
     hp_max = 220,
     hp_min = 220,
@@ -21,19 +21,19 @@ nssm:register_mob("nssm:ant_queen", "Ant Queen", {
     damage = 4,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 5,
         max = 7,},
-        {name = "nssm:ant_queen_abdomen",
+        {name = "nssw:ant_queen_abdomen",
         chance = 1,
         min = 1,
         max = 1,},
-        {name = "nssm:ant_leg",
+        {name = "nssw:ant_leg",
         chance = 2,
         min = 1,
         max = 6,},
-        {name = "nssm:ant_mandible",
+        {name = "nssw:ant_mandible",
         chance = 3,
         min = 1,
         max = 2,},
@@ -44,7 +44,7 @@ nssm:register_mob("nssm:ant_queen", "Ant Queen", {
     water_damage = 2,
     lava_damage = 7,
     light_damage = 0,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     blood_amount=50,
     stepheight=2.1,
     knock_back=0,
@@ -87,7 +87,7 @@ nssm:register_mob("nssm:ant_queen", "Ant Queen", {
 
                 local objects = minetest.env:get_objects_inside_radius(s, 10)
                 for _,obj in ipairs(objects) do
-                    if (obj:get_luaentity() and obj:get_luaentity().name == "nssm:ant_soldier") then
+                    if (obj:get_luaentity() and obj:get_luaentity().name == "nssw:ant_soldier") then
                         counter = counter + 1
                     end
                 end
@@ -97,7 +97,7 @@ nssm:register_mob("nssm:ant_queen", "Ant Queen", {
                 and (counter < 4)
                 then
                     explosion_particles(pos1, 1)
-                    minetest.add_entity(pos1, "nssm:ant_soldier")
+                    minetest.add_entity(pos1, "nssw:ant_soldier")
                 end
             end
         end

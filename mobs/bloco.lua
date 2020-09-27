@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:bloco", "Bloco", {
+nssw:register_mob("nssw:bloco", "Bloco", {
     type = "monster",
     hp_max = 24,
     hp_min = 14,
@@ -20,7 +20,7 @@ nssm:register_mob("nssm:bloco", "Bloco", {
     reach = 2,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 1,},
@@ -28,11 +28,11 @@ nssm:register_mob("nssm:bloco", "Bloco", {
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:brain",
+        {name = "nssw:brain",
         chance = 10,
         min = 1,
         max = 1,},
-        {name = "nssm:bloco_skin",
+        {name = "nssw:bloco_skin",
         chance = 3,
         min = 1,
         max = 2,},

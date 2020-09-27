@@ -1,14 +1,14 @@
-local nssmleadersfile = minetest.get_worldpath().."/nssm_leaderboard.lua.ser"
+local nsswleadersfile = minetest.get_worldpath().."/nssw_leaderboard.lua.ser"
 local steptime = 0
 local mob_descriptions = {}
 
 local function save_leaderboard()
-	local serdata = minetest.serialize(nssm.leaderboard)
+	local serdata = minetest.serialize(nssw.leaderboard)
 	if not serdata then
-		minetest.log("error", "[NSSM leaderboard] Data serialization failed")
+		minetest.log("error", "[nssw leaderboard] Data serialization failed")
 		return
 	end
-	local file, err = io.open(nssmleadersfile, "w")
+	local file, err = io.open(nsswleadersfile, "w")
 	if err then
 		return err
 	end
@@ -17,20 +17,20 @@ local function save_leaderboard()
 end
 
 local function load_leaderboard()
-	local file, err = io.open(nssmleadersfile, "r")
+	local file, err = io.open(nsswleadersfile, "r")
 	if not err then
-        nssm.leaderboard = minetest.deserialize(file:read("*a"))
+        nssw.leaderboard = minetest.deserialize(file:read("*a"))
         file:close()
 	else
-		minetest.log("error", "[NSSM leaderboard] Data read failed - initializing")
-        nssm.leaderboard = {}
+		minetest.log("error", "[nssw leaderboard] Data read failed - initializing")
+        nssw.leaderboard = {}
     end
 end
 
 load_leaderboard()
 
 -- Globally accessible function
-function __NSSM_kill_count(self, pos)
+function __nssw_kill_count(self, pos)
     if self.cause_of_death and
         self.cause_of_death.type == "punch" and
         self.attack and
@@ -39,11 +39,11 @@ function __NSSM_kill_count(self, pos)
         then
         
         local playername = self.attack:get_player_name()
-        local playerstats = nssm.leaderboard[playername] or {}
+        local playerstats = nssw.leaderboard[playername] or {}
         local killcount = playerstats[self.name] or 0
 
         playerstats[self.name] = killcount + 1
-        nssm.leaderboard[playername] = playerstats -- in case new stat
+        nssw.leaderboard[playername] = playerstats -- in case new stat
 
         minetest.log("action", playername.." defeated "..self.name)
         save_leaderboard()
@@ -53,12 +53,12 @@ function __NSSM_kill_count(self, pos)
 end
 
 local function list_kills(playername)
-    if not nssm.leaderboard[playername] then
+    if not nssw.leaderboard[playername] then
         return "No stats for "..playername
     end
 
     local killslist = "Kill stats for "..playername.." :"
-    for mob,count in pairs(nssm.leaderboard[playername] or {}) do
+    for mob,count in pairs(nssw.leaderboard[playername] or {}) do
         killslist = killslist.."\n"..count.."  "..mob_descriptions[mob]
     end
     return killslist
@@ -76,7 +76,7 @@ minetest.register_chatcommand("killstats", {
     end
 })
 
-function nssm:register_mob(name, description, def)
+function nssw:register_mob(name, description, def)
     mob_descriptions[name] = description
 
     local real_die = def.on_die
@@ -84,10 +84,10 @@ function nssm:register_mob(name, description, def)
     if real_die then
         def.on_die = function(self,pos)
             real_die(self,pos)
-            __NSSM_kill_count(self,pos)
+            __nssw_kill_count(self,pos)
         end
     else
-        def.on_die = __NSSM_kill_count
+        def.on_die = __nssw_kill_count
     end
 
     mobs:register_mob(name, def)

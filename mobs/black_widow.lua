@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:black_widow", "Black Widow", {
+nssw:register_mob("nssw:black_widow", "Black Widow", {
     type = "monster",
     hp_max = 26,
     hp_min = 19,
@@ -20,19 +20,19 @@ nssm:register_mob("nssm:black_widow", "Black Widow", {
     reach = 2,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:spider_leg",
+        {name = "nssw:spider_leg",
         chance = 3,
         min = 1,
         max = 8,},
-        {name = "nssm:silk_gland",
+        {name = "nssw:silk_gland",
         chance = 4,
         min = 1,
         max = 3,},
-        {name = "nssm:spider_meat",
+        {name = "nssw:spider_meat",
         chance = 4,
         min = 1,
         max = 2,},
@@ -44,7 +44,7 @@ nssm:register_mob("nssm:black_widow", "Black Widow", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     light_damage = 0,
     on_rightclick = nil,
@@ -62,6 +62,6 @@ nssm:register_mob("nssm:black_widow", "Black Widow", {
         punch_end = 160,
     },
     do_custom = function(self)
-        webber_ability(self, "nssm:web", 2)
+        webber_ability(self, "nssw:web", 2)
     end,
 })

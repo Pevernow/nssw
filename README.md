@@ -1,10 +1,17 @@
-# Not So Simple Mobs
+# Not So Simple World
 
-(C) 2016 NPX Team and Contributors , GPLv3
+(C) 2020 pevernow , NPX Team and Contributors , GPLv3
 
-NSSM adds a wide variety of very hostile mobs, as well as new weapons, armours and foods.
 
-This mod is a continuation of NPX Team's Not So Simple Mobs. Notes from the original README are available below.
+NSSW is the next generation of NSSM.
+
+It plans to add more fun.
+
+There is also better support for minetest 5.x than NSSM
+
+NSSW adds a wide variety of very hostile mobs, as well as new weapons, armours and foods.
+
+This mod is a continuation of NPX Team's Not So Simple Mobs. 
 
 ## License
 
@@ -39,8 +46,6 @@ This mod provides some extra settings for fine tuning the experience:
     * Impact is still preserved
     * Use this setting if the server experiences lag ; fast spears on laggy servers rarely get collision-detected
 
-## The original notes from NPX Team ! --¬
-
 We suggest that you play nssm with:
 
 * [`NSSB`](https://github.com/taikedz-mt/nssb) (Not So Simple Buildings, NPX Team's second mod that adds many blocks and Morlendor, the new dimension!)
@@ -50,6 +55,7 @@ We suggest that you play nssm with:
 
 We would like to thank:
 
+* NPXTeam, for his hard work in making old nssm.
 * PilzAdam, for his wonderful simple-mobs mod;
 * Tenplus1, for his hard work in making `mobs_redo`;
 * Echoes91, for Spears: simple but amazing;
@@ -63,5 +69,3 @@ Here are the trailers of the mod:
 
 * nssm 2.1: <https://www.youtube.com/watch?v=ccLUt58mo0k>
 * nssm 3.0: <https://www.youtube.com/watch?v=ZBuAi1sQJxQ>
-
-NPX Team ~

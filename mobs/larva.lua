@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:larva", "Mantis Larva", {
+nssw:register_mob("nssw:larva", "Mantis Larva", {
     type = "monster",
     hp_max = 12,
     hp_min = 8,
@@ -21,11 +21,11 @@ nssm:register_mob("nssm:larva", "Mantis Larva", {
     damage = 1,
     reach = 1,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 3,
         min = 1,
         max = 1,},
-        {name = "nssm:larva_meat",
+        {name = "nssw:larva_meat",
         chance = 2,
         min = 1,
         max = 2,},
@@ -38,7 +38,7 @@ nssm:register_mob("nssm:larva", "Mantis Larva", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     on_rightclick = nil,
     attack_type = "dogfight",
     animation = {
@@ -77,9 +77,9 @@ nssm:register_mob("nssm:larva", "Mantis Larva", {
                 texture = "tnt_smoke.png"
             })
             if math.random(1,2)==1 then
-                minetest.add_entity(pos, "nssm:mantis")
+                minetest.add_entity(pos, "nssw:mantis")
             else
-                minetest.add_entity(pos, "nssm:mantis_beast")
+                minetest.add_entity(pos, "nssw:mantis_beast")
             end
             return
         end

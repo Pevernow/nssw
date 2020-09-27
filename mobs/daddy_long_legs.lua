@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:daddy_long_legs", "Daddy Long Legs", {
+nssw:register_mob("nssw:daddy_long_legs", "Daddy Long Legs", {
     type = "monster",
     hp_max = 22,
     hp_min = 16,
@@ -19,15 +19,15 @@ nssm:register_mob("nssm:daddy_long_legs", "Daddy Long Legs", {
     damage = 3,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:spider_leg",
+        {name = "nssw:spider_leg",
         chance = 3,
         min = 1,
         max = 8,},
-        {name = "nssm:spider_meat",
+        {name = "nssw:spider_meat",
         chance = 4,
         min = 1,
         max = 2,},
@@ -40,7 +40,7 @@ nssm:register_mob("nssm:daddy_long_legs", "Daddy Long Legs", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",

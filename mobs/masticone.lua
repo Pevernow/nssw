@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:masticone", "Masticone", {
+nssw:register_mob("nssw:masticone", "Masticone", {
     type = "monster",
     hp_max = 25,
     hp_min = 24,
@@ -20,15 +20,15 @@ nssm:register_mob("nssm:masticone", "Masticone", {
     damage = 5,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 7,
         max = 8,},
-        {name = "nssm:masticone_fang",
+        {name = "nssw:masticone_fang",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:masticone_skull_fragments",
+        {name = "nssw:masticone_skull_fragments",
         chance = 2,
         min = 1,
         max = 2,},
@@ -42,7 +42,7 @@ nssm:register_mob("nssm:masticone", "Masticone", {
     group_attack=true,
     attack_animals=true,
     knock_back=4,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",
@@ -86,7 +86,7 @@ nssm:register_mob("nssm:masticone", "Masticone", {
                     local pos = {x=pos.x+math.random(-1,1), y=pos.y+0.5, z=pos.z+math.random(-1,1)}
                     local n = minetest.env:get_node(pos).name
                     if n == "air" then
-                        minetest.add_entity(pos, "nssm:masticone")
+                        minetest.add_entity(pos, "nssw:masticone")
                     end
                 end
             end

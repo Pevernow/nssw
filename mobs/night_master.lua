@@ -1,4 +1,4 @@
-mobs:register_mob("nssm:night_master", {
+mobs:register_mob("nssw:night_master", {
     type = "monster",
     hp_max = 60,
     hp_min = 60,
@@ -26,7 +26,7 @@ mobs:register_mob("nssm:night_master", {
     water_damage = 0,
     lava_damage = 5,
     light_damage = 0,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     blood_amount=50,
     on_rightclick = nil,
     fly = true,
@@ -61,11 +61,11 @@ mobs:register_mob("nssm:night_master", {
             texture = "tnt_smoke.png"
         })
         self.object:remove()
-        minetest.add_entity(pos, "nssm:night_master_2")
+        minetest.add_entity(pos, "nssw:night_master_2")
     end,
 })
 
-mobs:register_mob("nssm:night_master_2", {
+mobs:register_mob("nssw:night_master_2", {
     type = "monster",
     hp_max = 60,
     hp_min = 60,
@@ -126,11 +126,11 @@ mobs:register_mob("nssm:night_master_2", {
             texture = "tnt_smoke.png"
         })
         self.object:remove()
-        minetest.add_entity(pos, "nssm:night_master_1")
+        minetest.add_entity(pos, "nssw:night_master_1")
     end,
 })
 
-nssm:register_mob("nssm:night_master_1", "Night Master", {
+nssw:register_mob("nssw:night_master_1", "Night Master", {
     type = "monster",
     hp_max = 70,
     hp_min = 70,
@@ -154,15 +154,15 @@ nssm:register_mob("nssm:night_master_1", "Night Master", {
     damage = 12,
     jump = false,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 6,
         max = 7,},
-        {name = "nssm:heron_leg",
+        {name = "nssw:heron_leg",
         chance = 1,
         min = 1,
         max = 1,},
-        {name = "nssm:night_feather",
+        {name = "nssw:night_feather",
         chance = 1,
         min = 1,
         max = 1,},

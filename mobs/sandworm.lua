@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:sandworm", "Sandworm", {
+nssw:register_mob("nssw:sandworm", "Sandworm", {
     type = "monster",
     hp_max = 40,
     hp_min = 25,
@@ -21,15 +21,15 @@ nssm:register_mob("nssm:sandworm", "Sandworm", {
     },
     jump = false,
     drops = {
-        {name = "nssm:worm_flesh",
+        {name = "nssw:worm_flesh",
         chance = 2,
         min = 1,
         max = 3,},
-        {name = "nssm:sandworm_skin",
+        {name = "nssw:sandworm_skin",
         chance = 2,
         min = 1,
         max = 3,},
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
@@ -42,7 +42,7 @@ nssm:register_mob("nssm:sandworm", "Sandworm", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",

@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:crocodile", "Crocodile", {
+nssw:register_mob("nssw:crocodile", "Crocodile", {
     type = "monster",
     hp_max = 30,
     hp_min = 15,
@@ -18,15 +18,15 @@ nssm:register_mob("nssm:crocodile", "Crocodile", {
     floats = 1,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:crocodile_tail",
+        {name = "nssw:crocodile_tail",
         chance = 2,
         min = 1,
         max = 1,},
-        {name = "nssm:crocodile_skin",
+        {name = "nssw:crocodile_skin",
         chance = 3,
         min = 1,
         max = 1,},
@@ -40,7 +40,7 @@ nssm:register_mob("nssm:crocodile", "Crocodile", {
     group_attack=true,
     attack_animals=true,
     knock_back=3,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",

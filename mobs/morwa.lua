@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morwa", "Morwa", {
+nssw:register_mob("nssw:morwa", "Morwa", {
     type = "monster",
     hp_max = 56,
     hp_min = 49,
@@ -18,11 +18,11 @@ nssm:register_mob("nssm:morwa", "Morwa", {
     damage = 8,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 3,
         max = 4,},
-        {name = "nssm:wrathful_soul_fragment",
+        {name = "nssw:wrathful_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},
@@ -42,7 +42,7 @@ nssm:register_mob("nssm:morwa", "Morwa", {
     on_rightclick = nil,
     attack_type = "dogshoot",
     dogshoot_switch = true,
-    arrow = "nssm:morarrow",
+    arrow = "nssw:morarrow",
     shoot_interval = 2,
     shoot_offset = 0,
     animation = {
@@ -65,7 +65,7 @@ nssm:register_mob("nssm:morwa", "Morwa", {
         --minetest.chat_send_all("Luce: "..light)
         if (light < 8) then
             self.object:remove()
-            minetest.env:set_node(pos, {name="nssm:morwa_statue"})
+            minetest.env:set_node(pos, {name="nssw:morwa_statue"})
         end
     end,
 })

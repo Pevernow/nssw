@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:mordain", "Mordain", {
+nssw:register_mob("nssw:mordain", "Mordain", {
     type = "monster",
     hp_max = 32,
     hp_min = 23,
@@ -19,11 +19,11 @@ nssm:register_mob("nssm:mordain", "Mordain", {
     damage = 6,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 1,},
-        {name = "nssm:slothful_soul_fragment",
+        {name = "nssw:slothful_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},

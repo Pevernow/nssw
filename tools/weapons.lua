@@ -9,7 +9,7 @@ local default_dir = {
 local function weapons_shot(itemstack, placer, pointed_thing, velocity, name)
     local dir = placer:get_look_dir();
     local playerpos = placer:getpos();
-    local obj = minetest.env:add_entity({x=playerpos.x+0+dir.x,y=playerpos.y+2+dir.y,z=playerpos.z+0+dir.z}, "nssm:"..name)
+    local obj = minetest.env:add_entity({x=playerpos.x+0+dir.x,y=playerpos.y+2+dir.y,z=playerpos.z+0+dir.z}, "nssw:"..name)
     local vec = {x=dir.x*velocity,y=dir.y*velocity,z=dir.z*velocity}
     obj:setvelocity(vec)
     return itemstack
@@ -26,7 +26,7 @@ local function activate_balls(pos)
     local radius = 50
     local objects = minetest.env:get_objects_inside_radius(pos, radius)
     for _,obj in ipairs(objects) do
-        if (obj:get_luaentity() and obj:get_luaentity().name == "nssm:hellzone_grenade") then
+        if (obj:get_luaentity() and obj:get_luaentity().name == "nssw:hellzone_grenade") then
             obj:get_luaentity().move = 1
         end
     end
@@ -317,8 +317,8 @@ Function to register new weapons: parameters:
     - the velocity of the projectile
     - one material to be used in the receipt
 ]]
-local function nssm_register_weapon(name, def)
-    minetest.register_entity("nssm:"..name, {
+local function nssw_register_weapon(name, def)
+    minetest.register_entity("nssw:"..name, {
         textures = {name..".png"},
         on_step = function(self, dtime)
             def.on_step(self, dtime)
@@ -332,7 +332,7 @@ local function nssm_register_weapon(name, def)
         custom_timer = 0,
     })
 
-    minetest.register_craftitem("nssm:"..name.."_hand", {
+    minetest.register_craftitem("nssw:"..name.."_hand", {
         description = def.description,
         inventory_image = name.."_hand.png",
         on_use = function(itemstack, placer, pointed_thing)
@@ -346,18 +346,18 @@ local function nssm_register_weapon(name, def)
 
 
     minetest.register_craft({
-        output = 'nssm:'..name.."_hand 23",
+        output = 'nssw:'..name.."_hand 23",
         recipe = {
-            {'nssm:great_energy_globe', 'nssm:great_energy_globe', 'nssm:great_energy_globe'},
-            {'nssm:great_energy_globe', def.material, 'nssm:great_energy_globe'},
-            {'nssm:great_energy_globe', 'nssm:great_energy_globe', 'nssm:great_energy_globe'}
+            {'nssw:great_energy_globe', 'nssw:great_energy_globe', 'nssw:great_energy_globe'},
+            {'nssw:great_energy_globe', def.material, 'nssw:great_energy_globe'},
+            {'nssw:great_energy_globe', 'nssw:great_energy_globe', 'nssw:great_energy_globe'}
         }
     })
 
 end
 
 --Registered weapons:
-nssm_register_weapon("kamehameha", {
+nssw_register_weapon("kamehameha", {
     velocity = 25,
     on_step = function(self, dtime)
         default_on_step(self, dtime, 4, 20, default_dir, 1, "stone", 25)
@@ -370,7 +370,7 @@ nssm_register_weapon("kamehameha", {
 
 })
 
-nssm_register_weapon("kienzan", {
+nssw_register_weapon("kienzan", {
     velocity = 25,
     on_step = function(self, dtime)
         default_on_step(self, dtime, 5, 20, {x=1, y=0, z=1}, 1, nil, 25)
@@ -381,7 +381,7 @@ nssm_register_weapon("kienzan", {
     description = "Destructo Disc",
 })
 
-nssm_register_weapon("spirit_ball", {
+nssw_register_weapon("spirit_ball", {
     velocity = 25,
     move = 0,
     on_step = function(self, dtime)
@@ -395,7 +395,7 @@ nssm_register_weapon("spirit_ball", {
     description = "Winding Energy Bullet",
 })
 
-nssm_register_weapon("hellzone_grenade", {
+nssw_register_weapon("hellzone_grenade", {
     velocity = 25,
     move = 0,
     on_step = function(self, dtime)

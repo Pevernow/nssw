@@ -33,7 +33,7 @@ local function initiation_timeout(self)
     end
 end
 
-mobs:register_mob("nssm:morvalar", {
+mobs:register_mob("nssw:morvalar", {
     type = "monster",
     hp_max = 100,
     hp_min = 100,
@@ -129,7 +129,7 @@ mobs:register_mob("nssm:morvalar", {
 
                             if mod_name == "3d_armor" then
                                 nname = "3d_armor_inv_"..nname..".png"
-                            elseif mod_name == "nssm" then
+                            elseif mod_name == "nssw" then
                                 nname = "inv_"..nname..".png"
                             else
                                 nname = "3d_armor_inv_chestplate_diamond.png"
@@ -194,11 +194,11 @@ mobs:register_mob("nssm:morvalar", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar6", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar6", pos, "morparticle.png", 10)
     end,
 })
 
-mobs:register_mob("nssm:morvalar6", {
+mobs:register_mob("nssw:morvalar6", {
     type = "monster",
     hp_max = 120,
     hp_min = 120,
@@ -314,12 +314,12 @@ mobs:register_mob("nssm:morvalar6", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar5", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar5", pos, "morparticle.png", 10)
     end,
 })
 
 
-mobs:register_mob("nssm:morvalar5", {
+mobs:register_mob("nssw:morvalar5", {
     type = "monster",
     hp_max = 130,
     hp_min = 130,
@@ -377,7 +377,7 @@ mobs:register_mob("nssm:morvalar5", {
             local p = self.attack:getpos()
             minetest.after(2, function(self)
                 mobs:set_animation(self, "punch")
-                tnt_boom_nssm(p, {damage_radius=6,radius=5,ignore_protection=false})
+                tnt_boom_nssw(p, {damage_radius=6,radius=5,ignore_protection=false})
                 self.morvalar5_timer = os.time()
             end,self)
         end
@@ -385,12 +385,12 @@ mobs:register_mob("nssm:morvalar5", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar4", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar4", pos, "morparticle.png", 10)
     end,
 })
 
 
-mobs:register_mob("nssm:morvalar4", {
+mobs:register_mob("nssw:morvalar4", {
     type = "monster",
     hp_max = 100,
     hp_min = 100,
@@ -508,11 +508,11 @@ mobs:register_mob("nssm:morvalar4", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar3", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar3", pos, "morparticle.png", 10)
     end,
 })
 
-mobs:register_mob("nssm:morvalar3", {
+mobs:register_mob("nssw:morvalar3", {
     type = "monster",
     hp_max = 120,
     hp_min = 120,
@@ -546,7 +546,7 @@ mobs:register_mob("nssm:morvalar3", {
     on_rightclick = nil,
     attack_type = "dogshoot",
     dogshoot_switch = true,
-    arrow = "nssm:morarrow",
+    arrow = "nssw:morarrow",
     shoot_interval = 2,
     shoot_offset = 0,
     animation = {
@@ -569,11 +569,11 @@ mobs:register_mob("nssm:morvalar3", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar2", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar2", pos, "morparticle.png", 10)
     end,
 })
 
-mobs:register_mob("nssm:morvalar2", {
+mobs:register_mob("nssw:morvalar2", {
     type = "monster",
     hp_max = 90,
     hp_min = 90,
@@ -633,7 +633,7 @@ mobs:register_mob("nssm:morvalar2", {
             for _,obj in ipairs(objects) do
                 if obj:get_luaentity() then
                     local name = obj:get_luaentity().name
-                    if (name == "nssm:mordain" or name == "nssm:morde" or name == "nssm:morgut" or name == "nssm:morgre" or name == "nssm:morlu" or name == "nssm:morwa" or name == "nssm:morvy") then
+                    if (name == "nssw:mordain" or name == "nssw:morde" or name == "nssw:morgut" or name == "nssw:morgre" or name == "nssw:morlu" or name == "nssw:morwa" or name == "nssw:morvy") then
                         counter = counter + 1
                     end
                 end
@@ -649,19 +649,19 @@ mobs:register_mob("nssm:morvalar2", {
                 local p1 = vector.add(s,v)
                 p1 = vector.subtract(p1,vector.multiply(per,4))
 
-                add_entity_and_particles("nssm:morwa", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morwa", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:mordain", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:mordain", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:morgre", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morgre", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:morlu", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morlu", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:morgut", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morgut", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:morde", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morde", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
-                add_entity_and_particles("nssm:morvy", p1, "morparticle.png", 1)
+                add_entity_and_particles("nssw:morvy", p1, "morparticle.png", 1)
                 p1 = vector.add(p1,per)
             end
         end
@@ -669,11 +669,11 @@ mobs:register_mob("nssm:morvalar2", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar1", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar1", pos, "morparticle.png", 10)
     end,
 })
 
-mobs:register_mob("nssm:morvalar1", {
+mobs:register_mob("nssw:morvalar1", {
     type = "monster",
     hp_max = 160,
     hp_min = 160,
@@ -753,11 +753,11 @@ mobs:register_mob("nssm:morvalar1", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        add_entity_and_particles("nssm:morvalar0", pos, "morparticle.png", 10)
+        add_entity_and_particles("nssw:morvalar0", pos, "morparticle.png", 10)
     end,
 })
 
-nssm:register_mob("nssm:morvalar0", "Mor Valar", {
+nssw:register_mob("nssw:morvalar0", "Mor Valar", {
     type = "monster",
     hp_max = 100,
     hp_min = 100,
@@ -776,7 +776,7 @@ nssm:register_mob("nssm:morvalar0", "Mor Valar", {
     runaway = true,
     jump = true,
     drops = {
-        {name = "nssm:death_scythe",
+        {name = "nssw:death_scythe",
         chance = 1,
         min = 1,
         max = 1,},
@@ -825,7 +825,7 @@ nssm:register_mob("nssm:morvalar0", "Mor Valar", {
                 mobs:set_animation(self, "punch")
 
                 local m = 5     --velocity of the kamehameha
-                local obj = minetest.add_entity(s, "nssm:kamehameha_bad")
+                local obj = minetest.add_entity(s, "nssw:kamehameha_bad")
 
                 s.y = s.y+0.5
                 p.y = p.y+0.9
@@ -858,7 +858,7 @@ nssm:register_mob("nssm:morvalar0", "Mor Valar", {
     end,
 })
 
-minetest.register_entity("nssm:kamehameha_bad", {
+minetest.register_entity("nssw:kamehameha_bad", {
     textures = {"kamehameha.png"},
     on_step = function(self, dtime)
         local pos = self.object:getpos();
@@ -879,7 +879,7 @@ minetest.register_entity("nssm:kamehameha_bad", {
             end
             if obj:get_luaentity() then
                 local name = obj:get_luaentity().name
-                if name ~= "nssm:morvalar0" and name ~="nssm:kamehameha_bad" then
+                if name ~= "nssw:morvalar0" and name ~="nssw:kamehameha_bad" then
                     obj:set_hp(obj:get_hp()-5)
                     if (obj:get_hp() <= 0) then
                         if (not obj:is_player()) then
@@ -894,14 +894,14 @@ minetest.register_entity("nssm:kamehameha_bad", {
         local objects = minetest.env:get_objects_inside_radius(pos, 1)
         for _,obj in ipairs(objects) do
             if obj:is_player() then
-                tnt_boom_nssm(pos, {damage_radius=6,radius=5})
+                tnt_boom_nssw(pos, {damage_radius=6,radius=5})
                 self.object:remove()
                 --minetest.chat_send_all("Dentro il raggio piccolo")
             end
             if obj:get_luaentity() then
                 local name = obj:get_luaentity().name
-                if name ~= "nssm:morvalar0" and name ~="nssm:kamehameha_bad" then
-                    tnt_boom_nssm(pos, {damage_radius=6,radius=5})
+                if name ~= "nssw:morvalar0" and name ~="nssw:kamehameha_bad" then
+                    tnt_boom_nssw(pos, {damage_radius=6,radius=5})
                     self.object:remove()
                 end
             end

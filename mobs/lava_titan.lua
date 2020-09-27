@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:lava_titan", "Lava Titan", {
+nssw:register_mob("nssw:lava_titan", "Lava Titan", {
     type = "monster",
     hp_max = 180,
     hp_min = 180,
@@ -21,11 +21,11 @@ nssm:register_mob("nssm:lava_titan", "Lava Titan", {
     jump = false,
     jump_height=0,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 7,
         max = 9,},
-        {name = "nssm:lava_titan_eye",
+        {name = "nssw:lava_titan_eye",
         chance = 1,
         min = 1,
         max = 1,},
@@ -47,7 +47,7 @@ nssm:register_mob("nssm:lava_titan", "Lava Titan", {
     knock_back=0,
     attack_type = "dogshoot",
     dogshoot_switch = true,
-      arrow = "nssm:lava_arrow",
+      arrow = "nssw:lava_arrow",
       shoot_interval = 2,
       shoot_offset = 0,
     --[[

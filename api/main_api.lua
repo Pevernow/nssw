@@ -11,13 +11,13 @@ local always_unswappable_nodes = {
 }
 
 for _,v in ipairs(always_unswappable_nodes) do
-    if not nssm.unswappable_nodes[v] then
-        nssm.unswappable_nodes[#nssm.unswappable_nodes+1] = v
+    if not nssw.unswappable_nodes[v] then
+        nssw.unswappable_nodes[#nssw.unswappable_nodes+1] = v
     end
 end
 
 -- Return true if the original_node should not be swapped
-nssm.unswappable_node = function (pos, node_list)
+nssw.unswappable_node = function (pos, node_list)
     local _, node, original_node
     original_node = minetest.env:get_node(pos).name
 
@@ -46,14 +46,14 @@ nssm.unswappable_node = function (pos, node_list)
         end
     end
 
-    for _,node in pairs(nssm.unswappable_nodes) do
+    for _,node in pairs(nssw.unswappable_nodes) do
         if node == original_node then return true end
     end
 
     return false
 end
 
-nssm.drops = function(drop)
+nssw.drops = function(drop)
     if drop then
         drop:setvelocity({
             x = math.random(-10, 10) / 9,
@@ -163,7 +163,7 @@ function digging_attack(
         local posp = vector.add(s,dir)
         posp = vector.subtract(posp,per)
 
-        if nssm.unswappable_node(posp) then
+        if nssw.unswappable_node(posp) then
             return
         end
 
@@ -173,7 +173,7 @@ function digging_attack(
 
             for i = 0,dim.y do -- from 0 to dy between mob and player altitude?
                 local target_node = minetest.env:get_node(pos_to_dig).name
-                if not nssm.unswappable_node(pos_to_dig) then
+                if not nssw.unswappable_node(pos_to_dig) then
                     local nodename = minetest.env:get_node(posp).name
                     local nodedef = minetest.registered_nodes[nodename]
                     if nodedef.groups and nodedef.groups[group] then
@@ -190,7 +190,7 @@ function digging_attack(
 end
 
 local function safely_put_block(self, pos_under_mob, original_node, putting_block)
-    if not nssm.unswappable_node(pos_under_mob, {putting_block, "air"}) then
+    if not nssw.unswappable_node(pos_under_mob, {putting_block, "air"}) then
 
         -- walkable, non-buildable, or liquid
         if minetest.registered_nodes[original_node]
@@ -274,7 +274,7 @@ function webber_ability(        --puts randomly around the block defined as w_bl
         local t = {x=pos.x+dx, y=pos.y, z=pos.z+dz}
         --local n = minetest.env:get_node(p).name
         local k = minetest.env:get_node(t).name
-        if k == "air" and not nssm.unswappable_node(t) then
+        if k == "air" and not nssw.unswappable_node(t) then
             minetest.env:set_node(t, {name=w_block})
         end
     end
@@ -325,7 +325,7 @@ function midas_ability(        --ability to transform every blocks it touches in
                 local p = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
                 local n = minetest.env:get_node(p).name
 
-                if not nssm.unswappable_node(p, {"air"}) then
+                if not nssw.unswappable_node(p, {"air"}) then
                     minetest.env:set_node(p, {name=m_block})
                 end
             end
@@ -518,7 +518,7 @@ local function entity_physics(pos, radius, drops)
             local name = luaobj.name
 
             if objdef and objdef.on_blast then
-                if ((name == "nssm:pumpking") or (name == "nssm:morvalar0") or (name== "nssm:morvalar5")) then
+                if ((name == "nssw:pumpking") or (name == "nssw:morvalar0") or (name== "nssw:morvalar5")) then
                     do_damage = false
                     do_knockback = false
                 else
@@ -684,7 +684,7 @@ local function tnt_explode(pos, radius, ignore_protection, ignore_on_blast)
     return drops, radius
 end
 
-function tnt_boom_nssm(pos, def)
+function tnt_boom_nssw(pos, def)
     minetest.sound_play("tnt_explode", {pos = pos, gain = 1.5, max_hear_distance = 2*64})
     minetest.set_node(pos, {name = "tnt:boom"})
     local drops, radius = tnt_explode(pos, def.radius, def.ignore_protection,

@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:echidna", "Echidna", {
+nssw:register_mob("nssw:echidna", "Echidna", {
     type = "monster",
     hp_max = 240,
     hp_min = 240,
@@ -20,11 +20,11 @@ nssm:register_mob("nssm:echidna", "Echidna", {
         random = "echidna",
     },
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 6,
         max = 7,},
-        {name = "nssm:snake_scute",
+        {name = "nssw:snake_scute",
         chance = 1,
         min = 1,
         max = 1,},
@@ -35,7 +35,7 @@ nssm:register_mob("nssm:echidna", "Echidna", {
     floats = 1,
     lava_damage = 0,
     light_damage = 0,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     blood_amount=10,
     stepheight=1.1,
     knock_back=0,
@@ -43,7 +43,7 @@ nssm:register_mob("nssm:echidna", "Echidna", {
     on_rightclick = nil,
     attack_type = "dogshoot",
     dogshoot_switch = true,
-    arrow = "nssm:super_gas";
+    arrow = "nssw:super_gas";
     reach = 5,
     shoot_interval=3,
     animation = {

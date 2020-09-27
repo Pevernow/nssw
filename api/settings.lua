@@ -1,13 +1,13 @@
-nssm.mymapgenis = tonumber(minetest.settings:get('nssm.mymapgenis')) or 7
-nssm.multimobs = tonumber(minetest.settings:get('nssm.multimobs')) or 1000
+nssw.mymapgenis = tonumber(minetest.settings:get('nssw.mymapgenis')) or 7
+nssw.multimobs = tonumber(minetest.settings:get('nssw.multimobs')) or 1000
 
-nssm.server_rainbow_staff = minetest.settings:get_bool('nssm.server_rainbow_staff', false)
+nssw.server_rainbow_staff = minetest.settings:get_bool('nssw.server_rainbow_staff', false)
 
-nssm.energy_boosts = minetest.settings:get_bool('nssm.energy_boosts')
+nssw.energy_boosts = minetest.settings:get_bool('nssw.energy_boosts')
 
-nssm.energy_lights = minetest.settings:get_bool('nssm.energy_lights')
+nssw.energy_lights = minetest.settings:get_bool('nssw.energy_lights')
 
-nssm.unswappable_nodes = minetest.settings:get('nssm.unswappable_nodes') or ""
-nssm.unswappable_nodes = nssm.unswappable_nodes:split(",")
+nssw.unswappable_nodes = minetest.settings:get('nssw.unswappable_nodes') or ""
+nssw.unswappable_nodes = nssw.unswappable_nodes:split(",")
 
-nssm.spearmodifier = tonumber(minetest.settings:get('nssm.spearmodifier')) or 1
+nssw.spearmodifier = tonumber(minetest.settings:get('nssw.spearmodifier')) or 1

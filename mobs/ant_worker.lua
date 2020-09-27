@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:ant_worker", "Ant Worker", {
+nssw:register_mob("nssw:ant_worker", "Ant Worker", {
     type = "monster",
     passive = true,
     hp_max = 24,
@@ -21,19 +21,19 @@ nssm:register_mob("nssm:ant_worker", "Ant Worker", {
     reach = 2,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 2,
         min = 1,
         max = 1,},
-        {name = "nssm:ant_leg",
+        {name = "nssw:ant_leg",
         chance = 2,
         min = 1,
         max = 6,},
-        {name = "nssm:ant_mandible",
+        {name = "nssw:ant_mandible",
         chance = 3,
         min = 1,
         max = 2,},
-        {name = "nssm:ant_hard_skin",
+        {name = "nssw:ant_hard_skin",
         chance = 3,
         min = 1,
         max = 2,},
@@ -47,7 +47,7 @@ nssm:register_mob("nssm:ant_worker", "Ant Worker", {
     group_attack=true,
     knock_back=4,
     attack_animals=false,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     attack_type = "dogfight",
     animation = {
         speed_normal = 20,

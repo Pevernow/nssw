@@ -9,8 +9,8 @@
 local head_block = "nyancat:nyancat"
 local tail_block = "nyancat:nyancat_rainbow"
 
-local head_replacement = "nssm:modders_block"
-local tail_replacement = "nssm:light_energy"
+local head_replacement = "nssw:modders_block"
+local tail_replacement = "nssw:light_energy"
 
 local function drop_rainbow_staff(itemstack, dropper, pos)
     local extents = 16
@@ -20,11 +20,11 @@ local function drop_rainbow_staff(itemstack, dropper, pos)
         {"air"}
     )
     for _,p in ipairs(airnodes) do
-        minetest.set_node(pos, {name="nssm:light_energy"})
+        minetest.set_node(pos, {name="nssw:light_energy"})
     end
 end
 
-if not nssm.server_rainbow_staff then
+if not nssw.server_rainbow_staff then
     local max_rainbow_time = 5
 
     if not minetest.registered_nodes["nyancat:nyancat_rainbow"] then
@@ -37,7 +37,7 @@ if not nssm.server_rainbow_staff then
         print("NYAN !!!")
     end
 
-    minetest.register_entity("nssm:rainbow", {
+    minetest.register_entity("nssw:rainbow", {
         textures = {"transparent.png"},
         velocity = 10,
         hp_max = 50,
@@ -45,7 +45,7 @@ if not nssm.server_rainbow_staff then
             self.timer = self.timer or os.time()
 
             local pos = self.object:getpos()
-            if nssm.unswappable_node(pos) then
+            if nssw.unswappable_node(pos) then
                 return
             end
 
@@ -68,14 +68,14 @@ if not nssm.server_rainbow_staff then
         end
     })
 
-    minetest.register_tool("nssm:rainbow_staff", {
+    minetest.register_tool("nssw:rainbow_staff", {
         description = "Rainbow Staff",
         inventory_image = "rainbow_staff.png",
         groups = {not_in_creative_inventory=1,},
         on_use = function(itemstack, placer, pointed_thing)
             local dir = placer:get_look_dir();
             local playerpos = placer:getpos();
-            local obj = minetest.add_entity({x=playerpos.x+0+dir.x,y=playerpos.y+2+dir.y,z=playerpos.z+0+dir.z}, "nssm:rainbow")
+            local obj = minetest.add_entity({x=playerpos.x+0+dir.x,y=playerpos.y+2+dir.y,z=playerpos.z+0+dir.z}, "nssw:rainbow")
             local vec = {x=dir.x*6,y=dir.y*6,z=dir.z*6}
             obj:setvelocity(vec)
             return itemstack
@@ -85,7 +85,7 @@ if not nssm.server_rainbow_staff then
 
 
 else
-    minetest.register_tool("nssm:rainbow_staff", {
+    minetest.register_tool("nssw:rainbow_staff", {
         description = "Rainbow Tool",
         inventory_image = "rainbow_staff.png",
         tool_capabilities = {

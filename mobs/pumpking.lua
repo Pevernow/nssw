@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:pumpking", "PumpKing", {
+nssw:register_mob("nssw:pumpking", "PumpKing", {
     type = "monster",
     hp_max = 220,
     hp_min = 220,
@@ -21,15 +21,15 @@ nssm:register_mob("nssm:pumpking", "PumpKing", {
     damage = 13,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 7,
         max = 9,},
-        {name = "nssm:cursed_pumpkin_seed",
+        {name = "nssw:cursed_pumpkin_seed",
         chance = 1,
         min = 1,
         max = 1,},
-        {name = "nssm:black_powder",
+        {name = "nssw:black_powder",
         chance = 1,
         min = 9,
         max = 12,},
@@ -39,7 +39,7 @@ nssm:register_mob("nssm:pumpking", "PumpKing", {
     water_damage = 2,
     lava_damage = 5,
     light_damage = 0,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     blood_amount=25,
     stepheight=2.1,
     knock_back=0,
@@ -79,7 +79,7 @@ nssm:register_mob("nssm:pumpking", "PumpKing", {
                 end
                 local pos1 = {x=s.x+math.random(-1,1), y=s.y-1.5, z=s.z+math.random(-1,1)}
                 minetest.after(1, function(pos1)
-                    minetest.set_node(pos1, {name="nssm:pumpbomb"})
+                    minetest.set_node(pos1, {name="nssw:pumpbomb"})
                     minetest.get_node_timer(pos1):start(2)
                 end,
                 pos1)

@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morgre", "Morgre", {
+nssw:register_mob("nssw:morgre", "Morgre", {
     type = "monster",
     hp_max = 33,
     hp_min = 17,
@@ -21,11 +21,11 @@ nssm:register_mob("nssm:morgre", "Morgre", {
     damage = 1,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:greedy_soul_fragment",
+        {name = "nssw:greedy_soul_fragment",
         chance = 5,
         min = 1,
         max = 1,},

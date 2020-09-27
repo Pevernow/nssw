@@ -1,6 +1,7 @@
-nssm = {
+nssw = {
     version = "20190117",
-    maintainer = "taikedz-mt", -- change if forking project
+    maintainer = "pevernow", -- change if forking project
+    S = minetest.get_translator("nssw")
 }
 
 -- Pre-check compatibility
@@ -24,34 +25,34 @@ else
 end
 
 -- File loading
-nssm.path = minetest.get_modpath("nssm")
+nssw.path = minetest.get_modpath("nssw")
 
-function nssm:load(filepath)
-    dofile(nssm.path.."/"..filepath)
+function nssw:load(filepath)
+    dofile(nssw.path.."/"..filepath)
 end
 
 -- Load before all others
-nssm:load("api/settings.lua")
+nssw:load("api/settings.lua")
 
 -- General API
-nssm:load("api/main_api.lua")
-nssm:load("api/darts.lua")
-nssm:load("api/abms.lua")
+nssw:load("api/main_api.lua")
+nssw:load("api/darts.lua")
+nssw:load("api/abms.lua")
 
 --Mobs
 
-nssm:load("mobs/all_mobs.lua")
-nssm:load("mobs/spawn.lua")
+nssw:load("mobs/all_mobs.lua")
+nssw:load("mobs/spawn.lua")
 
 -- Items etc
 
-nssm:load("materials/materials.lua")
+nssw:load("materials/materials.lua")
 
-nssm:load("tools/basic.lua")
-nssm:load("tools/moranga_tools.lua")
-nssm:load("tools/spears.lua")
-nssm:load("tools/weapons.lua")
-nssm:load("tools/bomb_materials.lua")
-nssm:load("tools/bomb_evocation.lua")
-nssm:load("tools/rainbow_staff.lua")
-nssm:load("tools/armor.lua")
+nssw:load("tools/basic.lua")
+nssw:load("tools/moranga_tools.lua")
+nssw:load("tools/spears.lua")
+nssw:load("tools/weapons.lua")
+nssw:load("tools/bomb_materials.lua")
+nssw:load("tools/bomb_evocation.lua")
+nssw:load("tools/rainbow_staff.lua")
+nssw:load("tools/armor.lua")

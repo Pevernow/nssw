@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morgut", "Morgut", {
+nssw:register_mob("nssw:morgut", "Morgut", {
     type = "monster",
     hp_max = 35,
     hp_min = 28,
@@ -20,11 +20,11 @@ nssm:register_mob("nssm:morgut", "Morgut", {
         random = "morgut",
     },
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 3,},
-        {name = "nssm:gluttonous_soul_fragment",
+        {name = "nssw:gluttonous_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},

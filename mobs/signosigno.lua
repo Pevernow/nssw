@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:signosigno", "Signo-Signo", {
+nssw:register_mob("nssw:signosigno", "Signo-Signo", {
     type = "monster",
     hp_max = 20,
     hp_min = 8,
@@ -17,15 +17,15 @@ nssm:register_mob("nssm:signosigno", "Signo-Signo", {
     reach = 1.5,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:brain",
+        {name = "nssw:brain",
         chance = 20,
         min = 1,
         max = 1,},
-        {name = "nssm:slothful_soul_fragment",
+        {name = "nssw:slothful_soul_fragment",
         chance = 20,
         min = 1,
         max = 1,},

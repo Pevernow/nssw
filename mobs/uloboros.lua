@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:uloboros", "Uloboros", {
+nssw:register_mob("nssw:uloboros", "Uloboros", {
     type = "monster",
     hp_max = 28,
     hp_min = 17,
@@ -20,19 +20,19 @@ nssm:register_mob("nssm:uloboros", "Uloboros", {
     reach = 2,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 4,},
-        {name = "nssm:spider_leg",
+        {name = "nssw:spider_leg",
         chance = 2,
         min = 1,
         max = 8,},
-        {name = "nssm:silk_gland",
+        {name = "nssw:silk_gland",
         chance = 4,
         min = 1,
         max = 3,},
-        {name = "nssm:spider_meat",
+        {name = "nssw:spider_meat",
         chance = 4,
         min = 1,
         max = 2,},
@@ -45,7 +45,7 @@ nssm:register_mob("nssm:uloboros", "Uloboros", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",
@@ -62,6 +62,6 @@ nssm:register_mob("nssm:uloboros", "Uloboros", {
         punch_end = 110,
     },
     do_custom = function(self)
-        webber_ability(self, "nssm:web", 2)
+        webber_ability(self, "nssw:web", 2)
     end,
 })

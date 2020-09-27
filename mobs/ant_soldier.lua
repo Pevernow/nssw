@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:ant_soldier", "Ant Soldier", {
+nssw:register_mob("nssw:ant_soldier", "Ant Soldier", {
     type = "monster",
     hp_max = 32,
     hp_min = 24,
@@ -19,19 +19,19 @@ nssm:register_mob("nssm:ant_soldier", "Ant Soldier", {
     damage = 6,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:ant_leg",
+        {name = "nssw:ant_leg",
         chance = 2,
         min = 1,
         max = 6,},
-        {name = "nssm:ant_mandible",
+        {name = "nssw:ant_mandible",
         chance = 3,
         min = 1,
         max = 2,},
-        {name = "nssm:ant_hard_skin",
+        {name = "nssw:ant_hard_skin",
         chance = 3,
         min = 1,
         max = 2,},
@@ -46,7 +46,7 @@ nssm:register_mob("nssm:ant_soldier", "Ant Soldier", {
     group_attack=true,
     attack_animals=false,
     knock_back=2,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     attack_type = "dogfight",
     animation = {

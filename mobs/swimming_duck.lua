@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:swimming_duck", "Swimming Duck", {
+nssw:register_mob("nssw:swimming_duck", "Swimming Duck", {
     type = "monster",
     hp_max = 25,
     hp_min = 15,
@@ -20,19 +20,19 @@ nssm:register_mob("nssm:swimming_duck", "Swimming Duck", {
         random = "duck",
     },
     drops = {
-            {name = "nssm:life_energy",
+            {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:duck_legs",
+        {name = "nssw:duck_legs",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:duck_beak",
+        {name = "nssw:duck_beak",
         chance = 5,
         min = 1,
         max = 1,},
-        {name = "nssm:duck_feather",
+        {name = "nssw:duck_feather",
         chance = 6,
         min = 1,
         max = 2,},
@@ -45,7 +45,7 @@ nssm:register_mob("nssm:swimming_duck", "Swimming Duck", {
     group_attack=true,
     attack_animals=true,
     knock_back=4,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     on_rightclick = nil,
     attack_type = "dogfight",
     animation = {

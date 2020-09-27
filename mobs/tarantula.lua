@@ -1,4 +1,4 @@
-mobs:register_mob("nssm:tarantula", {
+mobs:register_mob("nssw:tarantula", {
     type = "monster",
     hp_max = 50,
     hp_min = 50,
@@ -20,7 +20,7 @@ mobs:register_mob("nssm:tarantula", {
     damage = 8,
     jump = true,
     drops = {
-        {name = "nssm:super_silk_gland",
+        {name = "nssw:super_silk_gland",
         chance = 1,
         min = 3,
         max = 5,},
@@ -31,13 +31,13 @@ mobs:register_mob("nssm:tarantula", {
     lava_damage = 7,
     reach = 3,
     knock_back=0,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=1.1,
     light_damage = 0,
     on_rightclick = nil,
     dogshoot_switch = true,
     attack_type = "dogshoot",
-    arrow = "nssm:thickwebball",
+    arrow = "nssw:thickwebball",
     shoot_interval = 2,
     shoot_offset = 1,
     animation = {
@@ -72,12 +72,12 @@ mobs:register_mob("nssm:tarantula", {
             collisiondetection = false,
             texture = "tnt_smoke.png"
         })
-        minetest.add_entity(pos, "nssm:tarantula_propower")
+        minetest.add_entity(pos, "nssw:tarantula_propower")
     end,
 })
 
 
-nssm:register_mob("nssm:tarantula_propower", "Tarantula", {
+nssw:register_mob("nssw:tarantula_propower", "Tarantula", {
     type = "monster",
     hp_max = 90,
     hp_min = 90,
@@ -98,23 +98,23 @@ nssm:register_mob("nssm:tarantula_propower", "Tarantula", {
     damage = 12,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 16,
         max = 18,},
-        {name = "nssm:spider_leg",
+        {name = "nssw:spider_leg",
         chance = 1,
         min = 1,
         max = 8,},
-        {name = "nssm:tarantula_chelicerae",
+        {name = "nssw:tarantula_chelicerae",
         chance = 1,
         min = 1,
         max = 1,},
-        {name = "nssm:silk_gland",
+        {name = "nssw:silk_gland",
         chance = 2,
         min = 1,
         max = 3,},
-        {name = "nssm:spider_meat",
+        {name = "nssw:spider_meat",
         chance = 2,
         min = 1,
         max = 2,},
@@ -125,7 +125,7 @@ nssm:register_mob("nssm:tarantula_propower", "Tarantula", {
     lava_damage = 3,
     reach = 4,
     knock_back=0,
-    blood_texture="nssm_blood_blue.png",
+    blood_texture="nssw_blood_blue.png",
     stepheight=2.1,
     light_damage = 0,
     on_rightclick = nil,

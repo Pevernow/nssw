@@ -6,7 +6,7 @@ local creative_mode = minetest.settings:get_bool("creative_mode")
 local base_spear_velocity = 16
 local base_gravity = 9.8
 local base_drag = 0.3
-local statmodifier = nssm.spearmodifier
+local statmodifier = nssw.spearmodifier
 
 --[[
 Spears thrown on servers have to contend with lag between spear movement and mob movement
@@ -41,7 +41,7 @@ local function spears_shot(itemstack, player)
     local spear = itemstack:get_name() .. '_entity'
     local speed, gravity
 
-    if spear == "nssm:spear_of_peace_entity" then
+    if spear == "nssw:spear_of_peace_entity" then
         speed = base_spear_velocity * statmodifier * 2
         gravity = base_gravity * statmodifier * 2
     else
@@ -65,7 +65,7 @@ end
 
 
 local function spears_set_entity(kind, eq, toughness, breadth)
-    local spearname = "nssm:spear_"..kind
+    local spearname = "nssw:spear_"..kind
     local spearentityname = spearname.."_entity"
     local maxwear = 65535
     local weardown = maxwear/toughness
@@ -165,7 +165,7 @@ end
 function spears_register_spear(kind, desc, eq, toughness, material, scale)
     scale = scale or 1
 
-    minetest.register_tool("nssm:spear_" .. kind, {
+    minetest.register_tool("nssw:spear_" .. kind, {
         description = desc .. " Spear",
         wield_image = "spear_" .. kind .. ".png",
         inventory_image = "spear_" .. kind .. ".png^[transform4",
@@ -190,17 +190,17 @@ function spears_register_spear(kind, desc, eq, toughness, material, scale)
     
     local SPEAR_ENTITY=spears_set_entity(kind, eq, toughness, scale)
     
-    minetest.register_entity("nssm:spear_" .. kind .. "_entity", SPEAR_ENTITY)
+    minetest.register_entity("nssw:spear_" .. kind .. "_entity", SPEAR_ENTITY)
     
     minetest.register_craft({
-        output = 'nssm:spear_' .. kind,
+        output = 'nssw:spear_' .. kind,
         recipe = {
             {'group:wood', 'group:wood', material},
         }
     })
     
     minetest.register_craft({
-        output = 'nssm:spear_' .. kind,
+        output = 'nssw:spear_' .. kind,
         recipe = {
             {material, 'group:wood', 'group:wood'},
         }
@@ -208,18 +208,18 @@ function spears_register_spear(kind, desc, eq, toughness, material, scale)
 end
 
 
-spears_register_spear('duck_beak', 'Duck Beak', 5, 12, 'nssm:duck_beak')
+spears_register_spear('duck_beak', 'Duck Beak', 5, 12, 'nssw:duck_beak')
 
-spears_register_spear('manticore', 'Manticore', 8, 16, 'nssm:manticore_spine')
+spears_register_spear('manticore', 'Manticore', 8, 16, 'nssw:manticore_spine')
 
-spears_register_spear('felucco_horn', 'Felucco Horn', 7, 18, 'nssm:felucco_horn')
+spears_register_spear('felucco_horn', 'Felucco Horn', 7, 18, 'nssw:felucco_horn')
 
-spears_register_spear('mantis', 'Mantis', 6, 20, 'nssm:mantis_claw')
+spears_register_spear('mantis', 'Mantis', 6, 20, 'nssw:mantis_claw')
 
-spears_register_spear('little_ice_tooth', 'Little Ice Tooth', 7, 20, 'nssm:little_ice_tooth')
+spears_register_spear('little_ice_tooth', 'Little Ice Tooth', 7, 20, 'nssw:little_ice_tooth')
 
-spears_register_spear('ant', 'Ant', 6, 50, 'nssm:ant_mandible')
+spears_register_spear('ant', 'Ant', 6, 50, 'nssw:ant_mandible')
 
-spears_register_spear('ice_tooth', 'Ice Tooth', 16, 200, 'nssm:ice_tooth')
+spears_register_spear('ice_tooth', 'Ice Tooth', 16, 200, 'nssw:ice_tooth')
 
-spears_register_spear('of_peace', 'Serenity', 30, 300, 'nssm:wrathful_moranga', 2)
+spears_register_spear('of_peace', 'Serenity', 30, 300, 'nssw:wrathful_moranga', 2)

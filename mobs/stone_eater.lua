@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:stone_eater", "Stone Eater", {
+nssw:register_mob("nssw:stone_eater", "Stone Eater", {
     type = "monster",
     hp_max = 27,
     hp_min = 19,
@@ -22,11 +22,11 @@ nssm:register_mob("nssm:stone_eater", "Stone Eater", {
         chance = 2,
         min = 1,
         max = 3,},
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:stoneater_mandible",
+        {name = "nssw:stoneater_mandible",
         chance = 2,
         min = 1,
         max = 4,},

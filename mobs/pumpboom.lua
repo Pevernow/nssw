@@ -1,5 +1,5 @@
 local function register_pumpboom(sizename, params)
-    nssm:register_mob("nssm:pumpboom_"..sizename, "Pumpboom ("..sizename..")", {
+    nssw:register_mob("nssw:pumpboom_"..sizename, "Pumpboom ("..sizename..")", {
         type = "monster",
         hp_min = params.hp_min,
         hp_max = params.hp_max,
@@ -29,7 +29,7 @@ local function register_pumpboom(sizename, params)
         group_attack=true,
         attack_animals=true,
         knock_back=2,
-        blood_texture="nssm_blood.png",
+        blood_texture="nssw_blood.png",
         stepheight=1.1,
         on_rightclick = nil,
         attack_type = "explode",
@@ -56,11 +56,11 @@ register_pumpboom("small",{
     boom_radius = 4,
     view_range = 20,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 1,
         max = 2,},
-        {name = "nssm:black_powder",
+        {name = "nssw:black_powder",
         chance = 2,
         min = 1,
         max = 2,},
@@ -75,11 +75,11 @@ register_pumpboom("medium",{
     boom_radius = 6,
     view_range = 25,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 3,},
-        {name = "nssm:black_powder",
+        {name = "nssw:black_powder",
         chance = 2,
         min = 1,
         max = 3,},
@@ -94,11 +94,11 @@ register_pumpboom("large",{
     boom_radius = 8,
     view_range = 30,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 3,
         max = 4,},
-        {name = "nssm:black_powder",
+        {name = "nssw:black_powder",
         chance = 2,
         min = 2,
         max = 4,},

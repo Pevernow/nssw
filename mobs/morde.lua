@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:morde", "Morde", {
+nssw:register_mob("nssw:morde", "Morde", {
     type = "monster",
     hp_max = 47,
     hp_min = 37,
@@ -19,11 +19,11 @@ nssm:register_mob("nssm:morde", "Morde", {
         random = "morde",
     },
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 2,
         max = 4,},
-        {name = "nssm:proud_soul_fragment",
+        {name = "nssw:proud_soul_fragment",
         chance = 3,
         min = 1,
         max = 1,},
@@ -103,11 +103,11 @@ nssm:register_mob("nssm:morde", "Morde", {
     on_die = function(self)
         local pos = self.object:getpos()
         self.object:remove()
-        minetest.add_entity(pos, "nssm:mortick")
+        minetest.add_entity(pos, "nssw:mortick")
     end,
 })
 
-minetest.register_entity("nssm:mortick", {
+minetest.register_entity("nssw:mortick", {
     textures = {"mortick.png"},
     hp_min = 10000,
     hp_max = 10000,
@@ -134,12 +134,12 @@ minetest.register_entity("nssm:mortick", {
         local name = minetest.env:get_node(s1).name
         if name == "fire:basic_flame" or
           name == "fire:permanent_flame" or
-          name == "nssm:phoenix_fire" or
+          name == "nssw:phoenix_fire" or
           name == "default:lava_source" or
           name == "default:lava_flowing" then
 
             self.object:remove()
-            __NSSM_kill_count(self,s)
+            __nssw_kill_count(self,s)
         end
 
         --Find player to attack:

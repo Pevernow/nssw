@@ -1,5 +1,5 @@
 -- arrow (duck_arrow)
-mobs:register_arrow("nssm:duck_father", {
+mobs:register_arrow("nssw:duck_father", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"duck_egg.png"},
@@ -63,13 +63,13 @@ function duck_explosion(pos)
                 vertical = false,
                 texture = "tnt_smoke.png",
             })
-            minetest.add_entity(pos, "nssm:duck")
+            minetest.add_entity(pos, "nssw:duck")
         end
     end)
 end
 
 -- snow_arrow
-mobs:register_arrow("nssm:snow_arrow", {
+mobs:register_arrow("nssw:snow_arrow", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"transparent.png"},
@@ -95,7 +95,7 @@ function ice_explosion(pos)
             for k=pos.z-math.random(0, 1), pos.z+math.random(0, 1), 1 do
                 local p = {x=i, y=j, z=k}
                 local n = minetest.env:get_node(p).name
-                if not nssm.unswappable_node(p) then
+                if not nssw.unswappable_node(p) then
                     minetest.set_node(p, {name="default:ice"})
                 end
             end
@@ -104,7 +104,7 @@ function ice_explosion(pos)
 end
 
 -- arrow manticore
-mobs:register_arrow("nssm:spine", {
+mobs:register_arrow("nssw:spine", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"manticore_spine_flying.png"},
@@ -128,7 +128,7 @@ mobs:register_arrow("nssm:spine", {
 })
 
 --morbat arrow
-mobs:register_arrow("nssm:morarrow", {
+mobs:register_arrow("nssw:morarrow", {
     visual = "sprite",
     visual_size = {x=0.5, y=0.5},
     textures = {"morarrow.png"},
@@ -145,7 +145,7 @@ mobs:register_arrow("nssm:morarrow", {
 })
 
 -- web arrow
-mobs:register_arrow("nssm:webball", {
+mobs:register_arrow("nssw:webball", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"web_ball.png"},
@@ -153,7 +153,7 @@ mobs:register_arrow("nssm:webball", {
     -- direct hit
     hit_player = function(self, player)
         local p = player:getpos()
-        explosion_web(p, "nssm:web")
+        explosion_web(p, "nssw:web")
     end,
 
     hit_mob = function(self, player)
@@ -164,7 +164,7 @@ mobs:register_arrow("nssm:webball", {
     end,
 
     hit_node = function(self, pos, node)
-        explosion_web(pos, "nssm:web")
+        explosion_web(pos, "nssw:web")
     end
 })
 
@@ -179,7 +179,7 @@ function explosion_web(pos, webtype)
                 local current = minetest.env:get_node(p).name
                 local ontop  = minetest.env:get_node(k).name
                 if current == "air" then
-                --if not nssm.unswappable_node(p) then -- replaces to many nodes
+                --if not nssw.unswappable_node(p) then -- replaces to many nodes
                     minetest.set_node(p, {name=webtype})
                 end
             end
@@ -189,7 +189,7 @@ end
 
 
 -- thick_web arrow
-mobs:register_arrow("nssm:thickwebball", {
+mobs:register_arrow("nssw:thickwebball", {
     visual = "sprite",
     visual_size = {x = 2, y = 2},
     textures = {"thick_web_ball.png"},
@@ -197,7 +197,7 @@ mobs:register_arrow("nssm:thickwebball", {
     -- direct hit
     hit_player = function(self, player)
         local p = player:getpos()
-        explosion_web(p, "nssm:thick_web")
+        explosion_web(p, "nssw:thick_web")
     end,
 
     hit_mob = function(self, player)
@@ -208,12 +208,12 @@ mobs:register_arrow("nssm:thickwebball", {
     end,
 
     hit_node = function(self, pos, node)
-        explosion_web(pos, "nssm:thick_web")
+        explosion_web(pos, "nssw:thick_web")
     end
 })
 
 -- arrow=>phoenix arrow
-mobs:register_arrow("nssm:phoenix_arrow", {
+mobs:register_arrow("nssw:phoenix_arrow", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"transparent.png"},
@@ -236,14 +236,14 @@ mobs:register_arrow("nssm:phoenix_arrow", {
         end
 
         -- If arrow has hit node, protected space, or is aged out
-        if os.time() - self.timer > 5 or minetest.is_protected(pos, "") or ((n~="air") and (n~="nssm:phoenix_fire")) then
+        if os.time() - self.timer > 5 or minetest.is_protected(pos, "") or ((n~="air") and (n~="nssw:phoenix_fire")) then
             self.object:remove()
         end
 
         -- Randomly decide to place phoenix fire at current location
         if math.random(1,2)==2 then
-            if not nssm.unswappable_node(pos) then
-                minetest.env:set_node(pos, {name="nssm:phoenix_fire"})
+            if not nssw.unswappable_node(pos) then
+                minetest.env:set_node(pos, {name="nssw:phoenix_fire"})
             end
         end
 
@@ -254,8 +254,8 @@ mobs:register_arrow("nssm:phoenix_arrow", {
             dz = math.random(-1,1)
             local p = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
             local n = minetest.env:get_node(p).name
-            if n=="air" and not nssm.unswappable_node(p) then
-                minetest.env:set_node(p, {name="nssm:phoenix_fire"})
+            if n=="air" and not nssw.unswappable_node(p) then
+                minetest.env:set_node(p, {name="nssw:phoenix_fire"})
             end
         end
 
@@ -264,7 +264,7 @@ mobs:register_arrow("nssm:phoenix_arrow", {
     end
 })
 
-mobs:register_arrow("nssm:super_gas", {
+mobs:register_arrow("nssw:super_gas", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"tnt_smoke.png^[colorize:green:170"},
@@ -293,8 +293,8 @@ function gas_explosion(pos)
                     return
                 end
                 local n = minetest.env:get_node(p).name
-                if n == "air" and not nssm.unswappable_node(p) then
-                    minetest.set_node(p, {name="nssm:venomous_gas"})
+                if n == "air" and not nssw.unswappable_node(p) then
+                    minetest.set_node(p, {name="nssw:venomous_gas"})
                 end
             end
         end
@@ -302,7 +302,7 @@ function gas_explosion(pos)
 end
 
 --
-mobs:register_arrow("nssm:roar_of_the_dragon", {
+mobs:register_arrow("nssw:roar_of_the_dragon", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"transparent.png"},
@@ -325,7 +325,7 @@ mobs:register_arrow("nssm:roar_of_the_dragon", {
         local objects = minetest.env:get_objects_inside_radius(pos, 1)
         for _,obj in ipairs(objects) do
             local name = obj:get_entity_name()
-            if name ~= "nssm:roar_of_the_dragon" and name ~= "nssm:mese_dragon" then
+            if name ~= "nssw:roar_of_the_dragon" and name ~= "nssw:mese_dragon" then
                 obj:set_hp(obj:get_hp()-0.05)
                 if (obj:get_hp() <= 0) then
                     if (not obj:is_player()) and name ~= self.object:get_luaentity().name then
@@ -350,7 +350,7 @@ mobs:register_arrow("nssm:roar_of_the_dragon", {
 })
 
 
-mobs:register_arrow("nssm:lava_arrow", {
+mobs:register_arrow("nssw:lava_arrow", {
     visual = "sprite",
     visual_size = {x = 1, y = 1},
     textures = {"transparent.png"},
@@ -366,7 +366,7 @@ mobs:register_arrow("nssm:lava_arrow", {
                 for dz=-1, 1, 2 do
                     local p = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
                     local n = minetest.env:get_node(p).name
-                    if n~="default:lava_flowing" and not nssm.unswappable_node(p) then
+                    if n~="default:lava_flowing" and not nssw.unswappable_node(p) then
                         minetest.set_node(p, {name="default:lava_flowing"})
                     end
                 end

@@ -1,0 +1,15 @@
+﻿@echo off
+set /p str1=find:
+set /p str2=replace:
+echo 正在修改文件(夹)名中，请稍候……
+for /f "delims=" %%a in ('dir /s /b ^|sort /+65535') do (
+if "%%~nxa" neq "%~nx0" (
+set "file=%%a"
+set "name=%%~na"
+set "extension=%%~xa"
+call set "name=%%name:%str1%=%str2%%%"
+setlocal enabledelayedexpansion
+ren "!file!" "!name!!extension!" 2>nul
+endlocal
+)
+)

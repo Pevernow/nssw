@@ -1,4 +1,4 @@
-nssm:register_mob("nssm:white_werewolf", "White Werewolf", {
+nssw:register_mob("nssw:white_werewolf", "White Werewolf", {
     type = "monster",
     hp_max = 40,
     hp_min = 25,
@@ -18,15 +18,15 @@ nssm:register_mob("nssm:white_werewolf", "White Werewolf", {
     damage = 5,
     jump = true,
     drops = {
-        {name = "nssm:life_energy",
+        {name = "nssw:life_energy",
         chance = 1,
         min = 3,
         max = 4},
-        {name = "nssm:werewolf_leg",
+        {name = "nssw:werewolf_leg",
         chance = 2,
         min = 1,
         max = 2},
-        {name = "nssm:white_wolf_fur",
+        {name = "nssw:white_wolf_fur",
         chance = 2,
         min = 1,
         max = 1},
@@ -39,7 +39,7 @@ nssm:register_mob("nssm:white_werewolf", "White Werewolf", {
     group_attack=true,
     attack_animals=true,
     knock_back=2,
-    blood_texture="nssm_blood.png",
+    blood_texture="nssw_blood.png",
     stepheight=1.1,
     on_rightclick = nil,
     attack_type = "dogfight",
